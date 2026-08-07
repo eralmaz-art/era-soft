@@ -60,6 +60,10 @@ Applications are peers. They depend on ERA SOFT Platform services and never on
 one another. The governing boundary is defined in
 [ERA SOFT Platform Architecture](platform/ERA_SOFT_PLATFORM.md).
 
+The five-to-ten-year choices, product boundaries, feature admission standard,
+and vertical-slice strategy are defined in
+[ERA SOFT Product Strategy](PRODUCT_STRATEGY.md).
+
 ## Initial users
 
 - owner / executive;

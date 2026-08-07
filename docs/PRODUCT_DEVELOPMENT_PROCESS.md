@@ -8,7 +8,8 @@ Applies from: **v0.3-product-foundation**
 ERA SOFT does not begin with the question “Which DocTypes should we create?”
 The first question is:
 
-> Как должен работать лучший строительный бизнес?
+> Как должен работать лучший бизнес-процесс и какое решение должен принять
+> пользователь?
 
 Frappe and ERPNext are evaluated only after the business model, user experience,
 and interface intent are understood. Configuration, extension, and custom code
@@ -31,6 +32,25 @@ dependency on another ERA application, duplicated platform capability, or
 application business logic placed in the platform blocks approval. The platform
 boundary is governed by
 [ERA_SOFT_PLATFORM.md](platform/ERA_SOFT_PLATFORM.md).
+
+## Feature admission rule
+
+No feature enters an approved backlog, UX flow, UI composition, Data Model, or
+implementation scope until it identifies:
+
+- the named user and operating context;
+- the concrete business decision or observable outcome it supports;
+- the trigger, frequency, required facts, and evidence;
+- the accountable business owner and consequence;
+- the application and module that own it;
+- normal, exception, and not-authorized outcomes;
+- how success will be observed;
+- why an existing process, ERPNext capability, or platform service is
+  insufficient.
+
+A field, button, document, dashboard, report, or notification is a possible
+solution, not a product requirement. The full admission standard and statement
+template are defined in [PRODUCT_STRATEGY.md](PRODUCT_STRATEGY.md).
 
 ## Mandatory sequence
 
@@ -165,6 +185,7 @@ Every ERA SOFT product maintains a versioned `PRODUCT_SPEC.md` containing at
 minimum:
 
 - Platform Relationship and owned business boundary;
+- application module map and feature ownership;
 - Purpose;
 - Users;
 - Business Goals;

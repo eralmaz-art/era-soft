@@ -16,12 +16,13 @@ Platform Boundary review defined in
 | `v0.1-architecture-approved` | upgrade-safe repository and construction architecture | complete |
 | `v0.2-visual-baseline` | branded local product shell and curated navigation | complete |
 | `v0.3-product-foundation` | Russian product language, design constitution, dashboard UX v2, and product-development gates | current stable foundation |
-| Platform Foundation gate | modular platform boundary, independent application model, and shared-service ownership | current review |
-| `v0.4-construction-product-spec` | approved Construction business model and complete product specification | planned |
-| `v0.5-construction-mvp` | first reconciled Construction vertical slice | planned |
-| `v0.6-procurement-mvp` | approved procurement product slice | planned |
-| `v0.7-finance-mvp` | management-finance product slice | planned |
-| `v1.0` | first production-ready ERA SOFT release | planned |
+| `v0.4-platform-foundation` | locked platform/application boundary and shared-service architecture | architecture locked; governance approval pending |
+| `v0.5-construction-business-model` | approved Construction Product Spec, rules, decisions, modules, and pilot boundary | draft complete; approval pending |
+| `v0.6-construction-ux` | validated information architecture and flows for the first vertical scenario | planned |
+| `v0.7-construction-ui` | approved ERA Design System compositions and complete UI states | planned |
+| `v0.8-construction-data-model` | approved ERPNext fit-gap, authoritative model, permissions, and data contracts | blocked by UX and UI |
+| `v0.9-construction-mvp` | implemented and reconciled first Construction vertical scenario | blocked by Data Model |
+| `v1.0-production-pilot` | accepted real-project pilot with operations, controls, support, and rollback | blocked by MVP |
 
 ## Phase 0 — Foundation (completed)
 
@@ -75,7 +76,7 @@ Exit evidence: approved design tokens and component rules, approved Owner
 Dashboard v2, Finance, Project, and Procurement direction, and a screen-review
 gate applied to the first product backlog.
 
-## Platform Foundation — current prerequisite
+## v0.4 — Platform Foundation (architecture locked; approval pending)
 
 Establish ERA SOFT as a modular operating platform and Construction as its first
 independent application. Define Core Platform Services, application dependency
@@ -87,7 +88,11 @@ Product and Architecture Owners, resolved P0 platform decisions, and a confirmed
 rule that applications depend on platform contracts rather than one another.
 No Data Model or implementation is authorized by this gate.
 
-## Phase 3.1 — Construction product definition (awaiting approval)
+The architecture boundary is locked by ADR 0003. This prevents architectural
+drift but does not close the document's unresolved P0 governance decisions or
+create the `v0.4-platform-foundation` tag automatically.
+
+## v0.5 — Construction Business Model (current next gate)
 
 Describe how the best construction business should work before selecting ERP
 entities. Approve the purpose, users, goals, end-to-end process, screen map,
@@ -95,67 +100,85 @@ navigation, KPIs, permissions, reports, boundaries, and open decisions in
 `docs/modules/construction/PRODUCT_SPEC.md`.
 
 Exit evidence: approved Construction Product Spec and business process, with
-named product and process owners, plus a passed Platform Boundary review. Data
-Model and implementation remain blocked until this exit evidence is recorded.
+named product and process owners, an approved application module map, confirmed
+first vertical scenario and pilot, plus a passed Platform Boundary review. UX,
+UI, Data Model, and implementation remain blocked until this evidence is
+recorded.
 
-## Phase 4 — Existing ERA software audit
+## v0.6 — Construction UX
 
-Inventory the existing frontend, backend, database, authentication, reports,
-integrations, and live data. Map every capability and field to an ERPNext or ERA
-SOFT destination. No migration design proceeds without data profiling.
+Validate how each role completes the first scenario without navigating an ERP
+catalogue or maintaining a shadow spreadsheet:
 
-Exit evidence: repository/system access, module comparison, data-quality report,
-and migration disposition for every source table.
+```text
+Need
+  → approval
+  → supplier order
+  → material delivery or service acceptance
+  → supplier invoice
+  → payment
+```
 
-## Phase 5 — ERP foundation
+Define information architecture, role entry points, decision briefs, flows,
+normal and exception states, Russian terminology, and reviewable mockups. Keep
+the approved Platform and Construction boundaries unchanged.
 
-Configure companies, roles, permissions, parties, items, warehouses, bank and
-cash accounts, chart of accounts, cost centers, and projects. Avoid domain code.
+Exit evidence: named users can walk through the full scenario and every material
+decision, state, handoff, source, correction, and not-authorized outcome is
+represented in the approved UX.
 
-Exit evidence: approved role matrix and end-to-end standard purchase, sale,
-stock, payment, and project-cost scenarios.
+## v0.7 — Construction UI
 
-## Phase 6 — ERA Construction implementation
+Apply the ERA SOFT Design System to the approved UX. Complete desktop,
+responsive, accessibility, Russian long-text, loading, empty, stale, error,
+permission, confirmation, and destructive states without changing business
+meaning.
 
-Deliver the approved vertical slice: Project, budget version, purchase request,
-purchase order, material/service acceptance, invoice, payment and reconciled
-Budget vs Actual. Expand to contracts, forecasting and labor only after the
-pilot evidence is accepted.
+Exit evidence: Product Owner, primary users, and Design System Owner approve the
+complete visual scenario and component use.
 
-Exit evidence: a pilot project reports approved budget, commitments, delivered
-and consumed material, actual, paid, forecast and warehouse balances from
-authoritative records without a shadow cost ledger.
+## v0.8 — Construction Data Model
 
-## Phase 7 — ERA Concrete
+Only after UX and UI approval, inspect the actual supported ERPNext behavior and
+define `reuse`, `extend`, `custom`, or `defer` for the first vertical scenario.
+Approve authoritative records, relationships, permissions, audit boundaries,
+KPI/report contracts, migration impact, and reconciliation tests.
 
-Deliver in vertical slices after the ERA Construction priority: order-to-dispatch,
-batch traceability, mixer/driver assignment, delivery-to-invoice, cost, then
-operational reports and KPIs.
+Any existing ERA software and live-data audit required for the scenario occurs
+inside this gate before migration design. Configuration of ERP foundations is
+planned only after the approved model establishes responsibility and sequence.
 
-Exit evidence: one plant can execute a full day from confirmed orders through
-reconciled deliveries and management reporting without shadow spreadsheets.
+Exit evidence: approved fit-gap and Data Model package with no duplicate
+business truth, no direct application dependency, no ERPNext core modification,
+and explicit acceptance tests for every management consequence.
 
-## Phase 8 — Management finance
+## v0.9 — Construction MVP
 
-Deliver cash/bank, receivable/payable, cash-flow, profitability, and management
-reports on top of ERPNext ledgers. Tax accounting is explicitly deferred.
+Implement only the approved vertical scenario. Budget and project context are
+required controls; contracts, forecasting, labor, tender scoring, advanced
+document management, and unrelated reporting remain outside scope unless an
+approved scenario decision requires them.
 
-Exit evidence: management closes an agreed reporting period and reconciles every
-headline number to source transactions.
+Exit evidence: the full Need → Approval → Supplier Order → Delivery or Service
+Acceptance → Supplier Invoice → Payment chain works on a test object, preserves
+authority and evidence, reconciles to source facts, and passes automated,
+permission, migration, visual, and rollback checks.
 
-## Phase 9 — Executive dashboard
+## v1.0 — Production Pilot
 
-Expose cash, bank, receivables, payables, today's sales, concrete volume, project
-health, leading counterparties, profit, and cash forecast with drill-through.
+Run the approved scenario with named users on one real construction project.
+Measure adoption, decision time, exceptions, reconciliation, support load, and
+remaining spreadsheet dependence. Operate backup, recovery, monitoring,
+security, release, rollback, and support procedures.
 
-Exit evidence: each KPI has an owner, formula, freshness target, permission rule,
-and reconciliation test; all priority KPIs are reachable within two actions.
+Exit evidence: Product Owner and process owners accept the pilot; the scenario
+can be operated through a normal working cycle without a shadow operational
+ledger; every headline result traces to authoritative sources; production
+operations and rollback have been rehearsed.
 
-## Phase 10 — AI
+## After v1.0 — Application portfolio expansion
 
-Add OCR, document understanding and generation, assistant interactions, voice,
-analytics, and forecasting only after source data, permissions, and evaluation
-sets are production-ready.
-
-Exit evidence: each use case has measured quality, human review, audit history,
-and a failure path that cannot silently post financial or stock transactions.
+Construction expands through additional complete scenarios only after pilot
+evidence. Concrete, Education, Finance, HR, Procurement, CRM, Documents, and AI
+Assistant remain independent future applications and enter the roadmap only
+through their own Business Model → UX → UI → Data Model → Implementation gates.

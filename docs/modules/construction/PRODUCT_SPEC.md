@@ -98,6 +98,38 @@ In particular:
 - future cross-application work uses platform-mediated handoffs and remains
   functional when an optional application is absent.
 
+## Application Module Map
+
+Modules are logical product capability boundaries inside ERA Construction. They
+do not prescribe workspaces, screens, packages, DocTypes, databases, or
+deployment units, and they do not change approved UX.
+
+| Construction module | Business responsibility | Example owned decisions or outcomes | First vertical slice role |
+|---|---|---|---|
+| Project Control | Preserve object context, accountable leadership, lifecycle, priorities, blockers, and closeout | authorize start; prioritize constraint; close object | supplies project context and owner |
+| Budget Control | Govern initial and revised authorization, cost purpose, forecast, variance, and budget exceptions | approve budget; approve revision; resolve over-budget need | validates need and reconciles consequence |
+| Procurement Control | Convert an approved construction need into a defensible supplier or contractor commitment | approve need; select supplier; approve purchase | owns need, approval, selection, and supplier order |
+| Supply and Materials | Control expected supply, site receipt, custody, movement, consumption, return, and discrepancy | accept material; reject shortage; resolve discrepancy | owns material delivery and acceptance path |
+| Work and Acceptance | Define, measure, accept, reject, and correct services and subcontracted construction work | accept service; accept partial work; record dispute | owns service-acceptance alternative |
+| Financial Control | Validate supplier obligation, advance, retention, payment priority, cash consequence, and project allocation | validate invoice; approve advance; approve payment | owns supplier invoice and payment outcome |
+| Evidence and Reporting | Make construction evidence, history, KPI meaning, reconciliation, and exception review usable | prove decision; reconcile source; escalate missing evidence | proves and reconciles the complete slice |
+
+Features belong to one primary module even when an end-to-end scenario crosses
+several modules. The first candidate feature chain is deliberately narrow:
+
+```text
+Purchase Need
+  → Need Approval
+  → Supplier Selection and Order Approval
+  → Material Delivery or Service Acceptance
+  → Supplier Obligation Validation
+  → Payment Approval and Execution
+  → Source Reconciliation
+```
+
+Each feature must pass the ERA SOFT Feature Admission Standard before UX. A
+document or field name alone does not constitute an approved feature.
+
 ## Product promise
 
 A responsible manager can answer, without reconciling separate spreadsheets:

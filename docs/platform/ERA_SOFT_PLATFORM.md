@@ -1,6 +1,7 @@
 # ERA SOFT Platform Architecture
 
-Status: **Draft — Platform Foundation review**<br>
+Status: **Draft — architecture baseline locked; governance approval pending**<br>
+Architecture baseline: **LOCKED for application design**<br>
 Scope: **Product and application architecture**<br>
 Data Model: **not authorized**<br>
 Implementation: **not authorized**
@@ -142,6 +143,74 @@ These services are product responsibilities, not authorization to create new
 technical services. At a future Data Model and implementation gate, ERA must
 first determine which responsibilities are already satisfied by Frappe,
 ERPNext, configuration, or supported extension points.
+
+## Product Decomposition Model
+
+ERA SOFT uses four product levels:
+
+```text
+ERA SOFT Platform
+  ↓
+Application
+  ↓
+Module
+  ↓
+Feature
+  ↓
+Named business decision
+```
+
+| Level | Purpose | Owns | Must not become |
+|---|---|---|---|
+| Platform | Provide stable capabilities shared across independent applications | Cross-cutting contracts, product shell, common services, Design System, platform governance | A container for one application's business logic |
+| Application | Deliver a bounded business operating outcome for named users | Product mission, business rules, application navigation, decisions, KPI meanings, modules, roadmap | A technical menu group or dependency of another application |
+| Module | Keep one coherent capability area inside an application understandable and governable | Related users, decisions, vocabulary, business boundary, feature set, module owner | A second application, generic platform service, or arbitrary folder of screens |
+| Feature | Help one named user achieve an observable outcome or make a named decision | Trigger, user value, required context, behavior, consequence, and success evidence | A field, button, document, or technical task without product value |
+
+Example:
+
+```text
+ERA SOFT Platform
+  → ERA Construction
+    → Procurement Control
+      → Purchase Need
+        → Approve, return, defer, or reject the need
+```
+
+### Module rules
+
+- Every module belongs to exactly one application and has one accountable
+  product or process owner.
+- A module is a logical product boundary, not a decision to create a package,
+  database, DocType group, workspace, or deployment unit.
+- A module groups decisions that share users, vocabulary, operating context, and
+  business outcome; visual proximity alone is insufficient.
+- Modules inside an application may collaborate only through application-owned
+  contracts and must not manipulate one another's private behavior.
+- Cyclic module dependencies and duplicated business facts are prohibited.
+- A module does not call another ERA application. Cross-application work still
+  uses platform contracts.
+- A capability used by two modules does not automatically belong to the
+  platform; it must pass the Capability Placement Test.
+- Module boundaries are reviewed before UX and again before Data Model, because
+  screen grouping and record grouping are not assumed to be identical.
+
+### Feature admission rule
+
+No feature enters approved product scope until it identifies:
+
+- the named user and operating context;
+- the concrete business decision or outcome it supports;
+- the trigger and frequency of that need;
+- the minimum facts and evidence required;
+- the responsible business owner and consequence;
+- the application and module that own it;
+- how success will be observed;
+- normal, exception, and not-authorized outcomes.
+
+“Add a comment field” is not an admissible feature. “Let the approver understand
+and preserve why a purchase need was rejected” is an admissible product outcome
+that may later lead to an approved UX and implementation choice.
 
 ## Application Architecture
 
@@ -354,6 +423,47 @@ future business and Data Model gate; duplication remains prohibited.
   are product-wide release gates.
 - Upstream Frappe or ERPNext core modifications remain prohibited.
 
+## Architecture Freeze and Change Control
+
+The Platform architecture boundary is now **LOCKED for application design**.
+Construction work proceeds within this baseline; the platform is not reopened
+merely because an application finds a local design inconvenient.
+
+Locked does not mean that unresolved P0 governance choices are approved. It
+means the dependency direction, platform/application separation, shared-service
+boundary, and no-direct-application-dependency rule are the governing baseline
+until a separately approved change replaces them.
+
+The following require a Platform Change Proposal and a separate Architecture
+Decision Record:
+
+- adding, removing, or materially changing a Core Platform Service;
+- moving business logic between an application and the platform;
+- allowing any direct application-to-application dependency;
+- changing the authoritative owner of a shared business fact;
+- introducing a breaking platform contract or incompatible application rule;
+- changing the supported-foundation or upstream-core boundary;
+- changing the Platform → Application → Module → Feature hierarchy.
+
+A Platform Change Proposal must state:
+
+1. The business problem and named decision that cannot be supported safely by
+   the current boundary.
+2. Evidence that the need is cross-application, stable, and not merely local
+   convenience.
+3. Alternatives considered, including keeping the capability in its owning
+   application.
+4. Applications, users, contracts, security, audit, UX, and releases affected.
+5. Compatibility, transition, rollback, and ownership consequences.
+6. Product Owner and Architecture Owner approval.
+
+Typographical corrections, links, examples, and clarifications that do not
+change ownership, dependency direction, contract meaning, or approval criteria
+may be updated through normal documentation review.
+
+This freeze is recorded by
+[ADR 0003](../adr/0003-lock-platform-application-boundary.md).
+
 ## Open Decisions
 
 ### P0 — required before Platform Foundation approval
@@ -393,6 +503,7 @@ Platform Foundation may be recommended for approval only when:
 - Platform and application ownership is named;
 - P0 decisions are resolved and recorded;
 - Construction is confirmed as an application, not the platform itself;
+- the Platform → Application → Module → Feature hierarchy is accepted;
 - no planned application directly depends on another application;
 - Core Platform Services and application business responsibilities have clear
   non-overlapping ownership;

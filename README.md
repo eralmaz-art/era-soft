@@ -17,6 +17,8 @@ upgrade-safe visual baseline, and the draft product design system:
 - product, architecture, roadmap, and decision records;
 - ERA SOFT branding, curated navigation, and a macOS launcher;
 - UX-first product rules and review-ready executive and construction concepts;
+- a locked Platform → Application → Module → Feature architecture boundary;
+- a long-term product strategy and decision-based feature admission standard;
 - a local environment preflight check;
 - lightweight repository quality checks.
 
@@ -68,6 +70,7 @@ system patterns it uses. See the [design-system charter](docs/design-system/era-
 ## Documentation
 
 - [Product vision](docs/PRODUCT_VISION.md)
+- [Product strategy](docs/PRODUCT_STRATEGY.md)
 - [ERA SOFT platform architecture](docs/platform/ERA_SOFT_PLATFORM.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Master roadmap](docs/ROADMAP.md)
