@@ -9,18 +9,20 @@ an upstream dependency and is never vendored or modified in this repository.
 
 ## Current status
 
-This repository contains the approved architecture foundation and the first
-upgrade-safe visual baseline:
+This repository contains the approved architecture foundation, the first
+upgrade-safe visual baseline, and the draft product design system:
 
 - a valid `era_soft` Frappe application skeleton;
 - explicit ERPNext extension boundaries;
 - product, architecture, roadmap, and decision records;
 - ERA SOFT branding, curated navigation, and a macOS launcher;
+- UX-first product rules and review-ready executive and construction concepts;
 - a local environment preflight check;
 - lightweight repository quality checks.
 
 No business DocTypes have been created yet. That is intentional: the first
-implementation must follow a fit-gap review against ERPNext.
+implementation must follow both a fit-gap review against ERPNext and an approved
+UX mockup.
 
 ## Target platform
 
@@ -59,6 +61,10 @@ Before adding a DocType, report, workflow, or service, record the answer to:
 Configure ERPNext when the answer is yes. Extend it through ERA SOFT when the
 answer is partial. Add ERA-owned code only when the answer is no.
 
+Before implementing any user-facing screen, also record which decision the
+screen helps its user make, attach an approved UX mockup, and show which design
+system patterns it uses. See the [design-system charter](docs/design-system/era-soft/00-product-experience-charter.md).
+
 ## Documentation
 
 - [Product vision](docs/PRODUCT_VISION.md)
@@ -68,4 +74,5 @@ answer is partial. Add ERA-owned code only when the answer is no.
 - [Local development](docs/LOCAL_DEVELOPMENT.md)
 - [Visual baseline operations](docs/VISUAL_BASELINE.md)
 - [Russian terminology standard](docs/localization/russian-terminology.md)
+- [ERA SOFT design system](docs/design-system/era-soft/README.md)
 - [Contributing](CONTRIBUTING.md)

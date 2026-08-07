@@ -18,12 +18,16 @@ waiting for a manually assembled report.
 ## Experience principles
 
 - ERA language and business processes, not framework terminology.
+- Every screen must help a named user make a named decision faster.
 - One authoritative record for every material business event.
 - Desktop-first, responsive, fast, and visually quiet.
+- Graphite typography, Deep Green accents, calm light surfaces, strict hierarchy,
+  and generous whitespace create one recognizable ERA product.
 - No unnecessary actions; the next operational step is obvious.
 - Any owner KPI is reachable within two interactions.
 - Operational entries create financial and project consequences automatically.
 - Exceptions demand attention; normal work stays calm.
+- UX brief, mockup, and approval precede user-facing implementation.
 
 ## Product surface
 

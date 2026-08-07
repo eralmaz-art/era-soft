@@ -28,12 +28,21 @@ bench files here.
 ## Definition of done
 
 - the ERPNext fit-gap decision is documented;
+- the screen brief names its user, decision, primary action, source data, and
+  success measure;
+- user-facing work has an approved UX mockup and reuses documented ERA SOFT
+  patterns;
 - permissions and company boundaries are tested;
 - validation exists on the server, not only in JavaScript;
 - migrations are repeatable and backward-safe;
 - user-facing labels are translatable;
 - the feature has an owner-visible outcome or a documented operational need;
 - relevant tests and documentation are updated.
+
+User-facing implementation must pass the UX review gate in
+`docs/design-system/era-soft/06-screen-review-gate.md`. A Frappe or ERPNext page
+that technically exposes the required records is not automatically an accepted
+ERA SOFT experience.
 
 ## Local checks
 
