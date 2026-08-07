@@ -64,6 +64,12 @@ events, and project cost projections that are missing from standard ERPNext. It
 reuses ERPNext Projects, Cost Centers, Warehouses, procurement, stock, and
 accounting documents.
 
+The proposed construction domain model, ERPNext fit-gap, cost dimensions,
+budget semantics, procurement flow and review questions are recorded in
+[`architecture/era-construction/`](architecture/era-construction/01-domain-model.md).
+That proposal is an architecture review pack, not authorization for major
+implementation.
+
 ### ERA Finance
 
 Adds management views and controls. It does not create a parallel ledger. Cash,
