@@ -1,0 +1,35 @@
+:root {
+	--era-ink: #172733;
+	--era-accent: #d8913b;
+	--era-paper: #f7f3eb;
+	--era-border: #dfe5e8;
+	--primary: var(--era-ink);
+	--primary-color: var(--era-ink);
+}
+
+.navbar .navbar-brand .app-logo {
+	max-height: 30px;
+}
+
+.layout-main-section {
+	border-color: var(--era-border);
+}
+
+.widget,
+.shortcut-widget-box {
+	border-radius: 12px;
+}
+
+.widget.shortcut-widget-box:hover,
+.link-item:hover {
+	border-color: color-mix(in srgb, var(--era-accent) 45%, var(--era-border));
+}
+
+.page-head .page-title .title-text {
+	color: var(--era-ink);
+}
+
+.btn-primary {
+	--btn-bg: var(--era-ink);
+	--btn-border: var(--era-ink);
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 128" role="img" aria-labelledby="title">
+  <title id="title">ERA SOFT</title>
+  <rect width="128" height="128" rx="28" fill="#172733"/>
+  <path d="M31 31h66v15H47v11h40v14H47v11h50v15H31z" fill="#f7f3eb"/>
+  <path d="M82 31h15v66H82z" fill="#d8913b"/>
+  <text x="158" y="79" fill="#172733" font-family="Inter,Arial,sans-serif" font-size="52" font-weight="700" letter-spacing="2">ERA SOFT</text>
+  <rect x="160" y="92" width="304" height="5" rx="2.5" fill="#d8913b"/>
+</svg>

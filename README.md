@@ -9,11 +9,13 @@ an upstream dependency and is never vendored or modified in this repository.
 
 ## Current status
 
-This repository contains the Phase 0/1 foundation:
+This repository contains the approved architecture foundation and the first
+upgrade-safe visual baseline:
 
 - a valid `era_soft` Frappe application skeleton;
 - explicit ERPNext extension boundaries;
 - product, architecture, roadmap, and decision records;
+- ERA SOFT branding, curated navigation, and a macOS launcher;
 - a local environment preflight check;
 - lightweight repository quality checks.
 
@@ -64,4 +66,5 @@ answer is partial. Add ERA-owned code only when the answer is no.
 - [Master roadmap](docs/ROADMAP.md)
 - [Initial capability map](docs/ERPNext_CAPABILITY_MAP.md)
 - [Local development](docs/LOCAL_DEVELOPMENT.md)
+- [Visual baseline operations](docs/VISUAL_BASELINE.md)
 - [Contributing](CONTRIBUTING.md)

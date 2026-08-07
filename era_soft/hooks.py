@@ -10,9 +10,24 @@ app_publisher = "ERA Group"
 app_description = "Construction and ready-mix concrete operations for ERA Group"
 app_email = ""
 app_license = "Proprietary"
-app_version = "0.1.0"
+app_version = "0.2.0"
 
 required_apps = ["erpnext"]
 
-# Deliberately empty during the foundation phase. Business hooks are introduced
-# only after the ERPNext fit-gap decision is recorded.
+app_logo_url = "/assets/era_soft/images/era-soft-mark.svg"
+app_home = "/desk/construction"
+
+add_to_apps_screen = [
+	{
+		"name": "era_soft",
+		"logo": app_logo_url,
+		"title": app_title,
+		"route": app_home,
+	}
+]
+
+app_include_css = "/assets/era_soft/css/era_soft.css"
+
+# Site-level branding is applied conservatively after schema/configuration sync.
+# Existing custom names and logos are preserved.
+after_migrate = ["era_soft.setup.visual_baseline.apply_visual_baseline"]

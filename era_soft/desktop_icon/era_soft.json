@@ -1,0 +1,14 @@
+{
+ "app": "era_soft",
+ "doctype": "Desktop Icon",
+ "hidden": 0,
+ "icon_type": "App",
+ "idx": 0,
+ "label": "ERA SOFT",
+ "link": "/desk/construction",
+ "link_type": "External",
+ "logo_url": "/assets/era_soft/images/era-soft-mark.svg",
+ "name": "ERA SOFT",
+ "roles": [],
+ "standard": 1
+}

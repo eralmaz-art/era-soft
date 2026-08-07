@@ -22,3 +22,24 @@ class TestInstallation(IntegrationTestCase):
 				"Executive Dashboard",
 			},
 		)
+
+	def test_visual_baseline_is_installed(self) -> None:
+		self.assertEqual(frappe.db.get_single_value("Website Settings", "app_name"), "ERA SOFT")
+		self.assertEqual(frappe.db.get_single_value("System Settings", "default_app"), "era_soft")
+		self.assertEqual(frappe.db.get_value("Desktop Icon", "ERPNext", "hidden"), 0)
+		for icon_name in ("Organization", "Accounting", "Subcontracting", "ERPNext Settings"):
+			with self.subTest(icon_name=icon_name):
+				self.assertEqual(
+					frappe.db.get_value("Desktop Icon", icon_name, "parent_icon"),
+					"ERPNext",
+				)
+		self.assertEqual(
+			set(
+				frappe.get_all(
+					"Workspace",
+					filters={"app": "era_soft"},
+					pluck="name",
+				)
+			),
+			{"Dashboard", "Construction", "Procurement", "Finance", "Reports", "Settings"},
+		)

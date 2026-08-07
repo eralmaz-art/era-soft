@@ -1,0 +1,33 @@
+{
+ "app": "era_soft",
+ "charts": [],
+ "content": "[{\"id\":\"era-settings-title\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\"><b>Settings</b></span>\",\"col\":12}},{\"id\":\"era-settings-system\",\"type\":\"card\",\"data\":{\"card_name\":\"System\",\"col\":6}},{\"id\":\"era-settings-access\",\"type\":\"card\",\"data\":{\"card_name\":\"Access\",\"col\":6}}]",
+ "custom_blocks": [],
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "settings",
+ "is_hidden": 0,
+ "label": "Settings",
+ "links": [
+  {"hidden": 0, "label": "System", "link_count": 3, "onboard": 0, "type": "Card Break"},
+  {"hidden": 0, "label": "System Settings", "link_to": "System Settings", "link_type": "DocType", "onboard": 0, "type": "Link"},
+  {"hidden": 0, "label": "Website Settings", "link_to": "Website Settings", "link_type": "DocType", "onboard": 0, "type": "Link"},
+  {"hidden": 0, "label": "Company", "link_to": "Company", "link_type": "DocType", "onboard": 0, "type": "Link"},
+  {"hidden": 0, "label": "Access", "link_count": 3, "onboard": 0, "type": "Card Break"},
+  {"hidden": 0, "label": "Users", "link_to": "User", "link_type": "DocType", "onboard": 0, "type": "Link"},
+  {"hidden": 0, "label": "Roles", "link_to": "Role", "link_type": "DocType", "onboard": 0, "type": "Link"},
+  {"hidden": 0, "label": "Role Permissions Manager", "link_to": "Role Permissions Manager", "link_type": "Page", "onboard": 0, "type": "Link"}
+ ],
+ "module": "ERA Soft",
+ "name": "Settings",
+ "number_cards": [],
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 9.0,
+ "shortcuts": [],
+ "title": "Settings",
+ "type": "Workspace"
+}

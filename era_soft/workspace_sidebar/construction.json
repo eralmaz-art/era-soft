@@ -1,0 +1,20 @@
+{
+ "app": "era_soft",
+ "doctype": "Workspace Sidebar",
+ "header_icon": "building",
+ "items": [
+  {"child": 0, "collapsible": 1, "icon": "home", "indent": 0, "keep_closed": 0, "label": "Dashboard", "link_to": "Dashboard", "link_type": "Workspace", "show_arrow": 0, "type": "Link"},
+  {"child": 0, "collapsible": 1, "icon": "building", "indent": 0, "keep_closed": 0, "label": "Construction", "link_to": "Construction", "link_type": "Workspace", "show_arrow": 0, "type": "Link"},
+  {"child": 0, "collapsible": 1, "icon": "shopping-cart", "indent": 0, "keep_closed": 0, "label": "Procurement", "link_to": "Procurement", "link_type": "Workspace", "show_arrow": 0, "type": "Link"},
+  {"child": 0, "collapsible": 1, "icon": "accounting", "indent": 0, "keep_closed": 0, "label": "Finance", "link_to": "Finance", "link_type": "Workspace", "show_arrow": 0, "type": "Link"},
+  {"child": 0, "collapsible": 1, "icon": "project", "indent": 0, "keep_closed": 0, "label": "Projects", "link_to": "Projects", "link_type": "Workspace", "show_arrow": 0, "type": "Link"},
+  {"child": 0, "collapsible": 1, "icon": "supplier", "indent": 0, "keep_closed": 0, "label": "Suppliers", "link_to": "Supplier", "link_type": "DocType", "show_arrow": 0, "type": "Link"},
+  {"child": 0, "collapsible": 1, "icon": "employee", "indent": 0, "keep_closed": 0, "label": "Employees", "link_to": "Employee", "link_type": "DocType", "show_arrow": 0, "type": "Link"},
+  {"child": 0, "collapsible": 1, "icon": "chart", "indent": 0, "keep_closed": 0, "label": "Reports", "link_to": "Reports", "link_type": "Workspace", "show_arrow": 0, "type": "Link"},
+  {"child": 0, "collapsible": 1, "icon": "settings", "indent": 0, "keep_closed": 0, "label": "Settings", "link_to": "Settings", "link_type": "Workspace", "show_arrow": 0, "type": "Link"}
+ ],
+ "module": "ERA Construction",
+ "name": "Construction",
+ "standard": 1,
+ "title": "Construction"
+}
