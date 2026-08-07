@@ -3,6 +3,23 @@
 The roadmap is outcome-based. A phase exits only when its evidence is accepted;
 code volume is not an exit criterion.
 
+All products follow the mandatory gates in
+`docs/PRODUCT_DEVELOPMENT_PROCESS.md`. No release may skip Business Model, UX,
+UI, Data Model, or Implementation approval.
+
+## Release map
+
+| Release | Outcome | Status |
+|---|---|---|
+| `v0.1-architecture-approved` | upgrade-safe repository and construction architecture | complete |
+| `v0.2-visual-baseline` | branded local product shell and curated navigation | complete |
+| `v0.3-product-foundation` | Russian product language, design constitution, dashboard UX v2, and product-development gates | current stable foundation |
+| `v0.4-construction-product-spec` | approved Construction business model and complete product specification | planned |
+| `v0.5-construction-mvp` | first reconciled Construction vertical slice | planned |
+| `v0.6-procurement-mvp` | approved procurement product slice | planned |
+| `v0.7-finance-mvp` | management-finance product slice | planned |
+| `v1.0` | first production-ready ERA SOFT release | planned |
+
 ## Phase 0 — Foundation (completed)
 
 - establish the ERA SOFT custom application repository;
@@ -44,16 +61,27 @@ Exit evidence: verified local site, tagged visual baseline, complete ERA
 Workspace translation, reviewed daily ERPNext screens, and reversible extension
 configuration without upstream source changes.
 
-## Phase 3 — ERA SOFT design system (current)
+## Phase 3 — ERA SOFT product foundation (completed)
 
 Define the visual foundations, reusable component behavior, product navigation,
 data-visualization rules, Owner Dashboard experience, Construction Workspace
-experience, and the UX-before-code governance gate. Validate concepts before
-changing the production Frappe interface.
+experience, product-development lifecycle, and UX-before-code governance gate.
+Validate concepts before changing the production Frappe interface.
 
 Exit evidence: approved design tokens and component rules, approved Owner
-Dashboard and construction-object mockups, resolved P0 design questions, and a
-screen-review gate applied to the first implementation backlog.
+Dashboard v2, Finance, Project, and Procurement direction, and a screen-review
+gate applied to the first product backlog.
+
+## Phase 3.1 — Construction product definition (current)
+
+Describe how the best construction business should work before selecting ERP
+entities. Approve the purpose, users, goals, end-to-end process, screen map,
+navigation, KPIs, permissions, reports, boundaries, and open decisions in
+`docs/modules/construction/PRODUCT_SPEC.md`.
+
+Exit evidence: approved Construction Product Spec and business process, with
+named product and process owners. Data Model and implementation remain blocked
+until this exit evidence is recorded.
 
 ## Phase 4 — Existing ERA software audit
 

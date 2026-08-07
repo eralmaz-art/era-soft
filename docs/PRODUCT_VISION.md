@@ -2,12 +2,15 @@
 
 ## North star
 
-> If ERA Group were launched today, what would the ideal management system look
-> like?
+> Создание лучшей строительной операционной системы в Кыргызстане.
 
 ERA SOFT is the single operating system for ERA Concrete, ERA Construction,
 EcoCity, and—later—SRIS and future ERA companies. It should feel like one ERA
 product even though Frappe and ERPNext provide the engine.
+
+The product is not framed internally as “ERP development.” The operating system
+ambition sets the quality bar for decisions, interaction speed, trust,
+architecture, language, and visual consistency.
 
 ## Product promise
 

@@ -9,6 +9,9 @@ turns the brand direction—graphite, Deep Green, calm light surfaces, strict
 typography, generous whitespace, and restrained detail—into rules that can be
 reviewed before code is written.
 
+The cross-product rules are maintained in
+[ERA SOFT Design Principles](../../design-principles.md).
+
 ## Review pack
 
 1. [Product experience charter](00-product-experience-charter.md)
@@ -19,6 +22,8 @@ reviewed before code is written.
 6. [Data visualization](05-data-visualization.md)
 7. [Screen review gate](06-screen-review-gate.md)
 8. [Open questions](07-open-questions.md)
+9. [Owner Dashboard UX mockup v1 — superseded](08-owner-dashboard-ux-v1.md)
+10. [Dashboard suite UX v2](09-dashboard-suite-ux-v2.md)
 
 ## Approval boundary
 
