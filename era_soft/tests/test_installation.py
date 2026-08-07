@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import frappe
+from frappe.translate import get_all_translations
 from frappe.tests import IntegrationTestCase
 
 
@@ -43,3 +44,15 @@ class TestInstallation(IntegrationTestCase):
 			),
 			{"Dashboard", "Construction", "Procurement", "Finance", "Reports", "Settings"},
 		)
+
+	def test_russian_localization_baseline_is_installed(self) -> None:
+		self.assertEqual(frappe.db.get_single_value("System Settings", "language"), "ru")
+		self.assertEqual(frappe.db.get_value("User", "Administrator", "language"), "ru")
+
+		translations = get_all_translations("ru")
+		self.assertEqual(translations["Dashboard"], "Главная")
+		self.assertEqual(translations["Material Request"], "Заявка на закупку")
+		self.assertEqual(translations["Purchase Order"], "Заказ на закупку")
+		self.assertEqual(translations["Purchase Invoice"], "Счет поставщика")
+		self.assertEqual(translations["Payment Entry"], "Оплата")
+		self.assertEqual(translations["Project"], "Объект")

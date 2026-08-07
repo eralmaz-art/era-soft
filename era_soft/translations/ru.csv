@@ -1,0 +1,170 @@
+Dashboard,Главная
+Construction,Строительство
+Procurement,Закупки
+Finance,Финансы
+Projects,Проекты
+Suppliers,Поставщики
+Employees,Сотрудники
+Reports,Отчеты
+Settings,Настройки
+Customer,Клиент
+Supplier,Поставщик
+Purchase Request,Заявка на закупку
+Material Request,Заявка на закупку
+Purchase Order,Заказ на закупку
+Purchase Invoice,Счет поставщика
+Purchase Receipt,Приемка материалов
+Warehouse,Склад
+Payment Entry,Оплата
+Payment,Оплата
+Accounts Payable,Кредиторская задолженность
+Accounts Receivable,Дебиторская задолженность
+Project,Объект
+Budget,Бюджет
+Contractor,Подрядчик
+Cost,Себестоимость
+Account,Статья затрат
+Employee,Сотрудник
+Item,Номенклатура
+Request for Quotation,Запрос предложения
+Supplier Quotation,Предложение поставщика
+Stock Entry,Движение запасов
+Task,Задача
+Company,Компания
+Bank Account,Банковский счет
+Bank Transaction,Банковская операция
+General Ledger,Главная книга
+Project Summary,Сводка по объектам
+Material Delivery,Поставка материалов
+Material Transfer,Перемещение материалов
+Material Consumption,Списание материалов
+Site Warehouse,Склад объекта
+Construction Site,Строительный объект
+Building / Block,Корпус / блок
+Floor,Этаж
+Work Category,Вид работ
+Cost Category,Статья затрат
+Service Purchase,Закупка услуг
+Advance Payment,Авансовая оплата
+Initial Budget,Первоначальный бюджет
+Revised Budget,Уточненный бюджет
+Committed Cost,Принятые обязательства
+Actual Cost,Фактическая себестоимость
+Paid Cost,Оплаченная себестоимость
+Forecast Cost,Прогнозная себестоимость
+Remaining Budget,Остаток бюджета
+Variance,Отклонение
+Cash Flow,Денежный поток
+Access,Доступ
+Accounts Payable Summary,Сводка кредиторской задолженности
+Bank Accounts,Банковские счета
+Bank Transactions,Банковские операции
+Budget Control,Контроль бюджета
+Budget Variance Report,Отчет об отклонениях бюджета
+Budgets,Бюджеты
+Items,Номенклатура
+Material Deliveries,Поставки материалов
+Operations,Операции
+Order and Receive,Заказы и приемка
+Payables,Кредиторская задолженность
+Payment Entries,Оплаты
+Payments,Оплаты
+Project-wise Stock Tracking,Движение запасов по объектам
+Purchase Analytics,Аналитика закупок
+Purchase Invoices,Счета поставщиков
+Purchase Order Analysis,Анализ заказов на закупку
+Purchase Orders,Заказы на закупку
+Purchase Receipts,Приемка материалов
+Purchase Requests,Заявки на закупку
+Request and Source,Заявки и выбор поставщика
+Requests for Quotation,Запросы предложений
+Role Permissions Manager,Управление правами ролей
+Roles,Роли
+Site Operations,Операции на объекте
+Stock Entries,Движения запасов
+Supplier Quotations,Предложения поставщиков
+System,Система
+System Settings,Системные настройки
+Tasks,Задачи
+Users,Пользователи
+Warehouses,Склады
+Website Settings,Настройки сайта
+Executive overview using approved ERPNext records. Management indicators will be added only after their definitions are reviewed.,Обзор для руководства на основе утвержденных документов ERPNext. Управленческие показатели будут добавлены только после согласования их определений.
+Primary operational workspace. This visual baseline links to standard ERPNext records and introduces no business automation.,Основное рабочее пространство. Визуальная версия использует стандартные документы ERPNext и не добавляет бизнес-автоматизацию.
+Stock,Складской учет
+Buying,Закупки
+Home,Главная
+Notification,Уведомления
+Delivery Note,Накладная на отгрузку
+Pick List,Лист комплектации
+Tools,Инструменты
+Setup,Настройка
+Menu,Меню
+Add,Добавить
+Create New,Создать
+Navigate to main content,Перейти к основному содержимому
+name,Наименование
+Clear all filters,Сбросить все фильтры
+descending,По убыванию
+Select All,Выбрать все
+Click to sort by {0},Сортировать по {0}
+Click to sort by Supplier Name,Сортировать по поставщику
+0 Filter Applied,Фильтры не применены
+You haven't created a {0} yet,Вы еще не создали: {0}
+No {0} found with matching filters. Clear filters to see all {0}.,По заданным фильтрам не найдено: {0}. Сбросьте фильтры для просмотра всех записей.
+Supplier Name,Поставщик
+Title,Название
+Date,Дата
+Required By,Требуется к
+Posting Date,Дата проведения
+Due Date,Срок оплаты
+Payment Type,Тип оплаты
+Document has been submitted,Документ проведен
+Draft,Черновик
+Submitted,Проведено
+Completed,Завершено
+Cancelled,Отменено
+Paid,Оплачено
+Overdue,Просрочено
+To Receive and Bill,Ожидает приемки и счета
+Receive,Поступление
+Pay,Выплата
+Timesheet,Табель рабочего времени
+Cancel,Отменить
+Details,Основное
+Terms,Условия
+More Info,Дополнительно
+Connections,Связи
+Order Confirmation No,Номер подтверждения заказа
+Is Subcontracted,Субподряд
+Currency and Price List,Валюта и прайс-лист
+Set Target Warehouse,Склад назначения
+No.,№
+Item Code,Код номенклатуры
+Quantity,Количество
+UOM,Ед. изм.
+Rate,Цена
+Amount,Сумма
+Target Warehouse,Склад назначения
+Download,Скачать
+Total Quantity,Общее количество
+Total,Итого
+Totals,Итоги
+Grand Total,Общая сумма
+In Words,Сумма прописью
+Disable Rounded Total,Отключить округление итога
+Rounded Total,Округленная сумма
+Advance Paid (Company Currency),Оплаченный аванс (в валюте компании)
+Additional Discount,Дополнительная скидка
+Comments,Комментарии
+Type a reply / comment,Написать ответ / комментарий
+Activity,Активность
+New Email,Новое письмо
+You last edited this,Вы редактировали последним
+You created this,Вы создали документ
+Assign,Назначить
+Attachments,Вложения
+Tags,Метки
+Share,Поделиться
+Last Edited By You,Последнее изменение вами
+Created By You,Создано вами

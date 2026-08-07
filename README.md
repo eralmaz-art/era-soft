@@ -67,4 +67,5 @@ answer is partial. Add ERA-owned code only when the answer is no.
 - [Initial capability map](docs/ERPNext_CAPABILITY_MAP.md)
 - [Local development](docs/LOCAL_DEVELOPMENT.md)
 - [Visual baseline operations](docs/VISUAL_BASELINE.md)
+- [Russian terminology standard](docs/localization/russian-terminology.md)
 - [Contributing](CONTRIBUTING.md)

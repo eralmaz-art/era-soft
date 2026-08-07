@@ -10,7 +10,7 @@ app_publisher = "ERA Group"
 app_description = "Construction and ready-mix concrete operations for ERA Group"
 app_email = ""
 app_license = "Proprietary"
-app_version = "0.2.0"
+app_version = "0.2.1"
 
 required_apps = ["erpnext"]
 
@@ -30,4 +30,7 @@ app_include_css = "/assets/era_soft/css/era_soft.css"
 
 # Site-level branding is applied conservatively after schema/configuration sync.
 # Existing custom names and logos are preserved.
-after_migrate = ["era_soft.setup.visual_baseline.apply_visual_baseline"]
+after_migrate = [
+	"era_soft.setup.visual_baseline.apply_visual_baseline",
+	"era_soft.setup.localization.apply_russian_localization",
+]
