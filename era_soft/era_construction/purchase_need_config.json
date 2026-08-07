@@ -1,0 +1,95 @@
+{
+  "roles": [
+    "ERA Project Manager",
+    "ERA Construction Approver"
+  ],
+  "workflow": {
+    "name": "ERA Purchase Need Approval",
+    "document_type": "ERA Purchase Need",
+    "workflow_state_field": "workflow_state",
+    "states": [
+      {
+        "state": "Draft Need",
+        "doc_status": "0",
+        "allow_edit": "ERA Project Manager",
+        "style": "Info"
+      },
+      {
+        "state": "Pending Approval",
+        "doc_status": "0",
+        "allow_edit": "ERA Construction Approver",
+        "style": "Warning"
+      },
+      {
+        "state": "Approved Purchase Request",
+        "doc_status": "1",
+        "allow_edit": "System Manager",
+        "style": "Success"
+      },
+      {
+        "state": "Returned",
+        "doc_status": "0",
+        "allow_edit": "ERA Project Manager",
+        "style": "Warning"
+      },
+      {
+        "state": "Rejected",
+        "doc_status": "0",
+        "allow_edit": "ERA Project Manager",
+        "style": "Danger"
+      }
+    ],
+    "transitions": [
+      {
+        "state": "Draft Need",
+        "action": "Submit for Approval",
+        "next_state": "Pending Approval",
+        "allowed": "ERA Project Manager",
+        "allow_self_approval": 1
+      },
+      {
+        "state": "Pending Approval",
+        "action": "Approve Need",
+        "next_state": "Approved Purchase Request",
+        "allowed": "ERA Construction Approver",
+        "allow_self_approval": 0
+      },
+      {
+        "state": "Pending Approval",
+        "action": "Return for Revision",
+        "next_state": "Returned",
+        "allowed": "ERA Construction Approver",
+        "allow_self_approval": 0
+      },
+      {
+        "state": "Pending Approval",
+        "action": "Reject Need",
+        "next_state": "Rejected",
+        "allowed": "ERA Construction Approver",
+        "allow_self_approval": 0
+      },
+      {
+        "state": "Returned",
+        "action": "Resubmit for Approval",
+        "next_state": "Pending Approval",
+        "allowed": "ERA Project Manager",
+        "allow_self_approval": 1
+      },
+      {
+        "state": "Rejected",
+        "action": "Revise Need",
+        "next_state": "Draft Need",
+        "allowed": "ERA Project Manager",
+        "allow_self_approval": 1
+      }
+    ]
+  },
+  "standard_read_permissions": [
+    "Company",
+    "Project",
+    "Item",
+    "Warehouse",
+    "UOM",
+    "Material Request"
+  ]
+}

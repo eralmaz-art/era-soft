@@ -6,7 +6,6 @@ import pathlib
 import re
 import unittest
 
-
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
 
@@ -26,9 +25,47 @@ class RepositoryContractTest(unittest.TestCase):
 	def test_no_erpnext_source_is_vendored(self) -> None:
 		self.assertFalse((ROOT / "erpnext").exists())
 
-	def test_visual_baseline_contains_no_custom_doctypes(self) -> None:
-		doctype_directories = list((ROOT / "era_soft").glob("**/doctype"))
-		self.assertEqual(doctype_directories, [])
+	def test_only_approved_construction_doctypes_exist(self) -> None:
+		doctype_names = {path.parent.name for path in (ROOT / "era_soft").glob("**/doctype/*/*.json")}
+		self.assertEqual(
+			doctype_names,
+			{"era_purchase_need", "era_purchase_need_item"},
+		)
+
+	def test_purchase_need_workflow_is_scoped_and_segregated(self) -> None:
+		config_path = ROOT / "era_soft" / "era_construction" / "purchase_need_config.json"
+		config = json.loads(config_path.read_text(encoding="utf-8"))
+		workflow = config["workflow"]
+
+		self.assertEqual(workflow["document_type"], "ERA Purchase Need")
+		self.assertNotEqual(workflow["document_type"], "Material Request")
+		self.assertEqual(
+			{state["state"] for state in workflow["states"]},
+			{
+				"Draft Need",
+				"Pending Approval",
+				"Approved Purchase Request",
+				"Returned",
+				"Rejected",
+			},
+		)
+		approve_transition = next(
+			transition for transition in workflow["transitions"] if transition["action"] == "Approve Need"
+		)
+		self.assertEqual(approve_transition["allowed"], "ERA Construction Approver")
+		self.assertEqual(approve_transition["allow_self_approval"], 0)
+
+	def test_release_version_is_consistent(self) -> None:
+		package_version = re.search(
+			r'__version__ = "([^"]+)"',
+			(ROOT / "era_soft" / "__init__.py").read_text(encoding="utf-8"),
+		).group(1)
+		hooks_version = re.search(
+			r'app_version = "([^"]+)"',
+			(ROOT / "era_soft" / "hooks.py").read_text(encoding="utf-8"),
+		).group(1)
+		self.assertEqual(package_version, "0.5.0")
+		self.assertEqual(hooks_version, package_version)
 
 	def test_navigation_matches_approved_order(self) -> None:
 		sidebar_path = ROOT / "era_soft" / "workspace_sidebar" / "construction.json"
@@ -103,9 +140,7 @@ class RepositoryContractTest(unittest.TestCase):
 					visible_sources.add(re.sub(r"<[^>]+>", "", text))
 
 		sidebar = json.loads(
-			(ROOT / "era_soft" / "workspace_sidebar" / "construction.json").read_text(
-				encoding="utf-8"
-			)
+			(ROOT / "era_soft" / "workspace_sidebar" / "construction.json").read_text(encoding="utf-8")
 		)
 		visible_sources.update(item["label"] for item in sidebar["items"])
 		visible_sources.discard("ERA SOFT")

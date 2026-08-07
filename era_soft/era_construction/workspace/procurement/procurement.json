@@ -10,7 +10,8 @@
  "is_hidden": 0,
  "label": "Procurement",
  "links": [
-  {"hidden": 0, "label": "Request and Source", "link_count": 3, "onboard": 0, "type": "Card Break"},
+  {"hidden": 0, "label": "Request and Source", "link_count": 4, "onboard": 0, "type": "Card Break"},
+  {"hidden": 0, "label": "Purchase Needs", "link_to": "ERA Purchase Need", "link_type": "DocType", "onboard": 0, "type": "Link"},
   {"hidden": 0, "label": "Purchase Requests", "link_to": "Material Request", "link_type": "DocType", "onboard": 0, "type": "Link"},
   {"hidden": 0, "label": "Requests for Quotation", "link_to": "Request for Quotation", "link_type": "DocType", "onboard": 0, "type": "Link"},
   {"hidden": 0, "label": "Supplier Quotations", "link_to": "Supplier Quotation", "link_type": "DocType", "onboard": 0, "type": "Link"},

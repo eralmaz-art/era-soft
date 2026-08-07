@@ -4,6 +4,8 @@ import frappe
 from frappe.translate import get_all_translations
 from frappe.tests import IntegrationTestCase
 
+from era_soft.setup.localization import apply_russian_localization
+
 
 class TestInstallation(IntegrationTestCase):
 	def test_required_apps_are_installed(self) -> None:
@@ -46,6 +48,9 @@ class TestInstallation(IntegrationTestCase):
 		)
 
 	def test_russian_localization_baseline_is_installed(self) -> None:
+		# Frappe's test runner temporarily selects English while preparing a run.
+		# Reapply the idempotent installation hook before asserting the site baseline.
+		apply_russian_localization()
 		self.assertEqual(frappe.db.get_single_value("System Settings", "language"), "ru")
 		self.assertEqual(frappe.db.get_value("User", "Administrator", "language"), "ru")
 

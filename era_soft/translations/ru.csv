@@ -10,6 +10,9 @@ Settings,Настройки
 Customer,Клиент
 Supplier,Поставщик
 Purchase Request,Заявка на закупку
+Purchase Need,Потребность в закупке
+Purchase Needs,Потребности
+ERA Purchase Need,Потребность в закупке
 Material Request,Заявка на закупку
 Purchase Order,Заказ на закупку
 Purchase Invoice,Счет поставщика
@@ -119,6 +122,16 @@ Supplier Name,Поставщик
 Title,Название
 Date,Дата
 Required By,Требуется к
+Request Date,Дата потребности
+Requested By,Инициатор
+Priority,Приоритет
+Normal,Обычный
+Urgent,Срочный
+Business Purpose,Цель закупки
+Business Reason,Обоснование
+Required Items,Необходимые позиции
+Decision,Решение
+Decision Reason,Причина решения
 Posting Date,Дата проведения
 Due Date,Срок оплаты
 Payment Type,Тип оплаты
@@ -171,3 +184,32 @@ Tags,Метки
 Share,Поделиться
 Last Edited By You,Последнее изменение вами
 Created By You,Создано вами
+Draft Need,Черновик потребности
+Pending Approval,На согласовании
+Approved Purchase Request,Заявка на закупку утверждена
+Returned,На доработке
+Rejected,Отклонено
+Submit for Approval,Отправить на согласование
+Approve Need,Согласовать потребность
+Return for Revision,Вернуть на доработку
+Reject Need,Отклонить потребность
+Resubmit for Approval,Повторно отправить
+Revise Need,Доработать потребность
+Create Purchase Need,Создать потребность
+Open Purchase Request,Открыть заявку на закупку
+Purchase need for {0},Потребность для объекта {0}
+"Describe the business reason and required materials, then submit for approval.","Укажите обоснование и необходимые материалы, затем отправьте потребность на согласование."
+"Review the project, reason, date, and quantities before deciding.","Проверьте объект, обоснование, срок и количество перед принятием решения."
+"Review the decision reason, correct the need, and resubmit.","Изучите причину возврата, исправьте потребность и отправьте повторно."
+This need was rejected. Revise it only when the business requirement changes.,Потребность отклонена. Доработайте ее только при изменении бизнес-потребности.
+The approved ERPNext Purchase Request is available from this need.,Утвержденная заявка на закупку доступна из этой потребности.
+Row {0}: Select a stock item.,Строка {0}: выберите складскую номенклатуру.
+Save,Сохранить
+Not Saved,Не сохранено
+Series,Серия
+Status,Статус
+Add row,Добавить строку
+Advanced Search,Расширенный поиск
+Open Link,Открыть документ
+Begin typing for results.,Начните ввод для поиска.
+No results found,Ничего не найдено
