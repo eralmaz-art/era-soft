@@ -22,10 +22,10 @@ within approved cost, schedule, quality, and cash constraints.
 
 ## Vision
 
-Within five years, ERA Construction is the single operating system for ERA
-Group's construction portfolio. Every object is managed through one shared,
-project-centered view from intent and budget through procurement, execution,
-cash control, and closeout.
+Within five years, ERA Construction is the project operating application for
+ERA Group's construction portfolio within ERA SOFT Platform. Every object is
+managed through one shared, project-centered view from intent and budget through
+procurement, execution, cash control, and closeout.
 
 Field teams, project leadership, procurement, and finance work from the same
 business facts instead of maintaining parallel spreadsheets. Management trusts
@@ -67,6 +67,37 @@ The permanent operating rules and decision contracts that apply to this
 specification are maintained in [BUSINESS_RULES.md](BUSINESS_RULES.md) and
 [DECISION_MODEL.md](DECISION_MODEL.md).
 
+## Platform Relationship
+
+ERA Construction is the first application on
+[ERA SOFT Platform](../../platform/ERA_SOFT_PLATFORM.md). It owns construction
+business behavior and depends only on approved platform contracts. Supported
+ERPNext capabilities may fulfil those contracts after a future fit-gap and
+Platform Boundary review. Construction must not depend on ERA Concrete,
+Finance, Procurement, Documents, HR, Education, CRM, AI Assistant, or any other
+ERA application.
+
+The platform owns reusable mechanisms for identity, users, company context,
+permission enforcement, workflow routing, notifications, files, search, audit,
+reports, dashboards, AI, API, settings, localization, and the Design System.
+Construction owns the project-specific meaning, business rules, decision
+authority, evidence requirements, KPI semantics, report purpose, and
+consequences supplied to those mechanisms.
+
+In particular:
+
+- platform identity is not duplicated as a Construction user model;
+- platform workflow executes approved Construction decision contracts but does
+  not define construction approval policy;
+- platform files store and protect evidence while Construction defines what the
+  evidence proves;
+- platform report and dashboard engines present Construction measures while
+  Construction owns their business definitions and reconciliation;
+- platform audit preserves common history while Construction identifies the
+  material business events and correction consequences;
+- future cross-application work uses platform-mediated handoffs and remains
+  functional when an optional application is absent.
+
 ## Product promise
 
 A responsible manager can answer, without reconciling separate spreadsheets:
@@ -99,7 +130,9 @@ A responsible manager can answer, without reconciling separate spreadsheets:
 
 One person may hold several roles in the first release. Permissions and approval
 authority are assigned to roles and company/project scope, not inferred from a
-job title alone.
+job title alone. User identity, authentication, language, and application
+membership belong to the platform; this specification defines only Construction
+roles, scope, responsibility, and business authority.
 
 ### Daily-work readiness by primary role
 
@@ -274,6 +307,10 @@ is provisional until the UX gate.
 No screen is authorized for implementation until its decision brief, state set,
 source map, and mockup are approved.
 
+Documents, photos, dashboards, and reports use shared platform services and UI
+components. Their project context, evidence meaning, KPI definition, and
+decision purpose remain owned by Construction.
+
 ## Navigation
 
 ### Project-centricity assessment
@@ -360,6 +397,10 @@ requires an approved data contract before Data Model or implementation.
 
 ## Permissions
 
+The platform owns identity and permission-enforcement mechanisms. ERA
+Construction owns the following business access, visibility, authority, and
+segregation requirements.
+
 ### Principles
 
 - Access is constrained by company, project, role, and document state.
@@ -414,6 +455,9 @@ business decisions.
 
 Reports are not authorized until their decision owner, formula, filters,
 permissions, freshness, drill-through, and reconciliation evidence are approved.
+Rendering, filtering, export, scheduling, access enforcement, and source
+navigation are platform-service responsibilities; report meaning and
+reconciliation remain Construction responsibilities.
 
 ## Future Scope
 
@@ -426,7 +470,8 @@ permissions, freshness, drill-through, and reconciliation evidence are approved.
 - BIM, drawing, revision, and document-control integrations;
 - mobile/offline site workflows after a validated field-use case;
 - customer/developer sales and unit handover;
-- AI assistance only after permissions and source evidence are reliable.
+- Construction AI assistance only through the governed platform AI service and
+  only after permissions and source evidence are reliable.
 
 Future scope does not enter UX, Data Model, or implementation merely because it
 is listed here.
@@ -483,6 +528,10 @@ Only after Business Model, UX, and UI approval will engineering map this product
 to ERPNext reuse, extension, or custom records. The existing construction
 architecture pack is input to that future decision; it does not override this
 product specification.
+
+The future mapping must also pass the Platform Boundary review: it may reuse
+Core Platform Services but must not duplicate them or introduce a dependency on
+another ERA application.
 
 No DocType, relationship, permission implementation, report query, workflow, or
 migration is authorized by this draft.

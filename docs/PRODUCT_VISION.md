@@ -2,11 +2,19 @@
 
 ## North star
 
-> Создание лучшей строительной операционной системы в Кыргызстане.
+> Создание единой модульной операционной платформы для ERA Group.
 
-ERA SOFT is the single operating system for ERA Concrete, ERA Construction,
-EcoCity, and—later—SRIS and future ERA companies. It should feel like one ERA
-product even though Frappe and ERPNext provide the engine.
+ERA SOFT is not a construction ERP. It is the modular operating platform for
+ERA Group. ERA Construction is its first application; Concrete, Education,
+Finance, HR, Procurement, CRM, Documents, AI Assistant, and future products can
+join as independent applications without redesigning Construction or each
+other.
+
+The platform should feel like one ERA product across ERA companies and future
+businesses even though Frappe and ERPNext provide the current technical
+foundation. Shared identity, permissions, files, audit, notifications, search,
+reports, dashboards, localization, and interface patterns belong to the
+platform. Business logic remains inside the application that owns the outcome.
 
 The product is not framed internally as “ERP development.” The operating system
 ambition sets the quality bar for decisions, interaction speed, trust,
@@ -36,14 +44,21 @@ waiting for a manually assembled report.
 
 ```text
 ERA SOFT
+├── Construction — first application
 ├── Concrete
-├── Construction
+├── Education
 ├── Finance
 ├── Procurement
 ├── HR
-├── Dashboard
-└── AI Assistant (later)
+├── CRM
+├── Documents
+├── AI Assistant
+└── Future applications
 ```
+
+Applications are peers. They depend on ERA SOFT Platform services and never on
+one another. The governing boundary is defined in
+[ERA SOFT Platform Architecture](platform/ERA_SOFT_PLATFORM.md).
 
 ## Initial users
 

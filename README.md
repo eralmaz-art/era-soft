@@ -68,6 +68,7 @@ system patterns it uses. See the [design-system charter](docs/design-system/era-
 ## Documentation
 
 - [Product vision](docs/PRODUCT_VISION.md)
+- [ERA SOFT platform architecture](docs/platform/ERA_SOFT_PLATFORM.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Master roadmap](docs/ROADMAP.md)
 - [Initial capability map](docs/ERPNext_CAPABILITY_MAP.md)

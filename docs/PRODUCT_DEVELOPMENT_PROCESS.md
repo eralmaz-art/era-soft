@@ -14,6 +14,24 @@ Frappe and ERPNext are evaluated only after the business model, user experience,
 and interface intent are understood. Configuration, extension, and custom code
 remain implementation choices rather than product requirements.
 
+## Platform foundation prerequisite
+
+ERA SOFT is a modular platform, and every business product is an independent
+application on that platform. Before an application passes its Business Model
+gate, it must declare:
+
+- the business capabilities and outcomes it owns;
+- the Core Platform Services it uses;
+- any shared business facts and their authoritative owner;
+- every proposed cross-application handoff;
+- how it remains usable when another optional application is absent.
+
+A Platform Boundary review is mandatory at every product gate. A direct
+dependency on another ERA application, duplicated platform capability, or
+application business logic placed in the platform blocks approval. The platform
+boundary is governed by
+[ERA_SOFT_PLATFORM.md](platform/ERA_SOFT_PLATFORM.md).
+
 ## Mandatory sequence
 
 ```text
@@ -146,6 +164,7 @@ business outcome?
 Every ERA SOFT product maintains a versioned `PRODUCT_SPEC.md` containing at
 minimum:
 
+- Platform Relationship and owned business boundary;
 - Purpose;
 - Users;
 - Business Goals;
@@ -177,4 +196,3 @@ approval record are complete.
 
 An approval is versioned, dated, and scoped. Silence, an implementation commit,
 or a passed technical test does not substitute for product approval.
-

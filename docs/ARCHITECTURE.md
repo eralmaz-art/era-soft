@@ -6,21 +6,32 @@
 Users
   │
   ▼
-ERA workspaces, forms, reports, dashboards
+ERA SOFT product experience
+app shell, navigation, Design System, localization
   │
-  ├── ERA SOFT custom domains
-  │     Concrete, Construction, Executive projections
+  ▼
+ERA SOFT applications
+Construction, Concrete, Education, Finance, HR, Procurement,
+CRM, Documents, AI Assistant, future applications
   │
-  └── ERPNext standard domains
-        Selling, Buying, Stock, Manufacturing, Projects, Accounts, HR
-          │
-          ▼
-     Frappe Framework
-     auth, permissions, workflow, ORM, jobs, API, audit
-          │
-          ▼
-     MariaDB + Redis/Valkey + file storage
+  ▼
+ERA SOFT Platform services
+identity, companies, permissions, workflow, notifications, files,
+search, audit, reports, dashboards, AI, API, settings
+  │
+  ▼
+Supported foundations
+ERPNext standard capabilities + Frappe Framework
+  │
+  ▼
+MariaDB + Redis/Valkey + file storage
 ```
+
+ERA SOFT Platform is the product architecture above the current technical
+foundation. Construction is its first application, not the platform itself.
+Applications are peers and communicate only through governed platform
+contracts. The complete platform boundary is defined in
+[`platform/ERA_SOFT_PLATFORM.md`](platform/ERA_SOFT_PLATFORM.md).
 
 ## Ownership boundaries
 
@@ -50,6 +61,13 @@ For each requirement:
 
 ## Domain boundaries
 
+### ERA SOFT Platform
+
+Owns the shared product shell and contracts for identity, company context,
+permissions, workflow, notifications, files, search, audit, reports, dashboards,
+AI, API, settings, localization, and the Design System. It supplies reusable
+mechanisms but does not own application business rules.
+
 ### ERA Concrete
 
 Owns concrete grade specifications, mix-design versions, batching/production
@@ -69,6 +87,10 @@ budget semantics, procurement flow and review questions are recorded in
 [`architecture/era-construction/`](architecture/era-construction/01-domain-model.md).
 That proposal is an architecture review pack, not authorization for major
 implementation.
+
+ERA Construction must not depend on ERA Concrete, Finance, Procurement,
+Documents, HR, or any other ERA application. Any future cross-application
+handoff uses a platform contract and preserves the authoritative business owner.
 
 ### ERA Finance
 
@@ -93,6 +115,14 @@ truth.
 - Dashboard calculations are reproducible from authoritative documents.
 
 ## Dependency policy
+
+ERA applications depend on platform contracts, never on one another. Platform
+services do not depend on application business logic. Cross-application cycles,
+private-state access, and duplicated shared facts are prohibited.
+
+An application's reuse of standard ERPNext capabilities requires its own fit-gap
+review and supported extension boundary; it does not grant ownership of
+ERPNext core or permission to modify it.
 
 ERA SOFT supports one ERPNext major version at a time. Both Frappe and ERPNext
 are bounded to major version 16 in `pyproject.toml`. Upgrades are performed in a

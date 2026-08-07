@@ -5,7 +5,9 @@ code volume is not an exit criterion.
 
 All products follow the mandatory gates in
 `docs/PRODUCT_DEVELOPMENT_PROCESS.md`. No release may skip Business Model, UX,
-UI, Data Model, or Implementation approval.
+UI, Data Model, or Implementation approval. Every application also passes the
+Platform Boundary review defined in
+`docs/platform/ERA_SOFT_PLATFORM.md`.
 
 ## Release map
 
@@ -14,6 +16,7 @@ UI, Data Model, or Implementation approval.
 | `v0.1-architecture-approved` | upgrade-safe repository and construction architecture | complete |
 | `v0.2-visual-baseline` | branded local product shell and curated navigation | complete |
 | `v0.3-product-foundation` | Russian product language, design constitution, dashboard UX v2, and product-development gates | current stable foundation |
+| Platform Foundation gate | modular platform boundary, independent application model, and shared-service ownership | current review |
 | `v0.4-construction-product-spec` | approved Construction business model and complete product specification | planned |
 | `v0.5-construction-mvp` | first reconciled Construction vertical slice | planned |
 | `v0.6-procurement-mvp` | approved procurement product slice | planned |
@@ -72,7 +75,19 @@ Exit evidence: approved design tokens and component rules, approved Owner
 Dashboard v2, Finance, Project, and Procurement direction, and a screen-review
 gate applied to the first product backlog.
 
-## Phase 3.1 — Construction product definition (current)
+## Platform Foundation — current prerequisite
+
+Establish ERA SOFT as a modular operating platform and Construction as its first
+independent application. Define Core Platform Services, application dependency
+rules, shared UI and business-service boundaries, and the governance required to
+add future applications without architectural redesign.
+
+Exit evidence: approved `docs/platform/ERA_SOFT_PLATFORM.md`, named Platform
+Product and Architecture Owners, resolved P0 platform decisions, and a confirmed
+rule that applications depend on platform contracts rather than one another.
+No Data Model or implementation is authorized by this gate.
+
+## Phase 3.1 — Construction product definition (awaiting approval)
 
 Describe how the best construction business should work before selecting ERP
 entities. Approve the purpose, users, goals, end-to-end process, screen map,
@@ -80,8 +95,8 @@ navigation, KPIs, permissions, reports, boundaries, and open decisions in
 `docs/modules/construction/PRODUCT_SPEC.md`.
 
 Exit evidence: approved Construction Product Spec and business process, with
-named product and process owners. Data Model and implementation remain blocked
-until this exit evidence is recorded.
+named product and process owners, plus a passed Platform Boundary review. Data
+Model and implementation remain blocked until this exit evidence is recorded.
 
 ## Phase 4 — Existing ERA software audit
 
