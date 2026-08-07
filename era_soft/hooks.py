@@ -26,7 +26,7 @@ add_to_apps_screen = [
 	}
 ]
 
-app_include_css = "/assets/era_soft/css/era_soft.css"
+app_include_css = ["/assets/era_soft/css/era_soft.css"]
 
 # Site-level branding is applied conservatively after schema/configuration sync.
 # Existing custom names and logos are preserved.

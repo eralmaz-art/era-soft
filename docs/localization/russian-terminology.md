@@ -127,6 +127,8 @@ ERA SOFT. Русские названия применяются только н
 | Role Permissions Manager | Управление правами ролей |
 | Roles | Роли |
 | Site Operations | Операции на объекте |
+| Project Work | Работа с объектами |
+| Materials and Warehouses | Материалы и склады |
 | Stock Entries | Движения запасов |
 | Supplier Quotations | Предложения поставщиков |
 | System | Система |
@@ -142,6 +144,7 @@ ERA SOFT. Русские названия применяются только н
 |---|---|
 | Executive overview using approved ERPNext records. Management indicators will be added only after their definitions are reviewed. | Обзор для руководства на основе утвержденных документов ERPNext. Управленческие показатели будут добавлены только после согласования их определений. |
 | Primary operational workspace. This visual baseline links to standard ERPNext records and introduces no business automation. | Основное рабочее пространство. Визуальная версия использует стандартные документы ERPNext и не добавляет бизнес-автоматизацию. |
+| Projects, procurement, deliveries and site materials in one calm operational workspace. | Объекты, закупки, поставки и материалы на площадке — в одном спокойном рабочем пространстве. |
 
 ## Ежедневные действия, поля и статусы
 
