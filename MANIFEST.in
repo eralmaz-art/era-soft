@@ -1,0 +1,2 @@
+include README.md
+recursive-include era_soft *.css *.csv *.html *.js *.json *.md *.png *.py *.svg *.txt

@@ -1,0 +1,1 @@
+"""ERA SOFT application configuration."""
