@@ -33,6 +33,12 @@ implementation must follow a fit-gap review against ERPNext.
 
 See [Local development](docs/LOCAL_DEVELOPMENT.md) before installing anything.
 
+The prepared isolated workspace can be checked with:
+
+```bash
+scripts/local_stack.sh status
+```
+
 ## Repository map
 
 ```text

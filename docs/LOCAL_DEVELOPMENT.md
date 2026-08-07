@@ -54,6 +54,37 @@ bench --site era.localhost run-tests --app era_soft
 
 Expected installed apps include `frappe`, `erpnext`, and `era_soft`.
 
+## Isolated native stack
+
+When Docker virtualization is unavailable, ERA SOFT can use a workspace-local
+toolchain and native processes. The prepared Codex workspace keeps the toolchain,
+bench, and runtime as siblings of this repository:
+
+```text
+work/
+├── era-soft/
+├── frappe-bench/
+├── runtime/
+└── toolchain/
+```
+
+After the toolchain and site are initialized, manage the services from this
+repository:
+
+```bash
+scripts/local_stack.sh start
+scripts/local_stack.sh status
+scripts/local_stack.sh stop
+```
+
+The default development URL is `http://era.localhost:8003`. The local test user
+is `Administrator`; credentials are chosen during `bench new-site` and must never
+be reused outside a disposable development environment.
+
+The prepared disposable database uses `admin` as its local root password. Set
+`ERA_DB_ROOT_PASSWORD` when the site was initialized with another password. The
+database and Redis listeners remain bound to the local machine.
+
 ## Version upgrades
 
 Pin both upstream applications to `version-16`; do not pin production to
