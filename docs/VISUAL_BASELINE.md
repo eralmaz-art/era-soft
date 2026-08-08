@@ -23,6 +23,9 @@ launcher then exits quietly. Diagnostics are written to:
 ~/Library/Logs/ERA SOFT Launcher.log
 ```
 
+When the checked-out ERA SOFT revision changes, the launcher refreshes the local
+web process automatically while leaving the database and site data intact.
+
 The application icon is generated from the versioned ERA SOFT brand mark. The
 Desktop entry is a symbolic link, so reviewed launcher and icon updates take
 effect without reinstalling it.

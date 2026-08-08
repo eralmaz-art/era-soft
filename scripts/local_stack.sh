@@ -18,6 +18,7 @@ export ERA_MARIADB_CONNECTOR_PREFIX="$toolchain_root/bottles/mariadb-connector-c
 mariadb_pid=/private/tmp/era-mariadb.pid
 mariadb_socket=/private/tmp/era-mariadb.sock
 web_pid="$bench_root/config/pids/era_web.pid"
+web_signature="$bench_root/config/pids/era_web.signature"
 
 is_running() {
 	[ -f "$1" ] && kill -0 "$(sed -n '1p' "$1")" 2>/dev/null
@@ -48,6 +49,15 @@ web_process_running() {
 	else
 		is_running "$web_pid"
 	fi
+}
+
+current_web_signature() {
+	git -C "$repo_root" rev-parse HEAD 2>/dev/null || echo "unversioned"
+}
+
+web_signature_matches() {
+	[ -f "$web_signature" ] &&
+		[ "$(sed -n '1p' "$web_signature")" = "$(current_web_signature)" ]
 }
 
 wait_until_running() {
@@ -94,6 +104,7 @@ stop_web_process() {
 		kill "$(sed -n '1p' "$web_pid")"
 	fi
 	wait_until_stopped "web server" web_process_running
+	rm -f "$web_signature"
 	echo "Stopped web server"
 }
 
@@ -136,11 +147,12 @@ start_stack() {
 	wait_until_running "Redis cache" redis_running 13003
 	wait_until_running "Redis queue" redis_running 11003
 
-	if web_process_running && ! web_running; then
+	if web_process_running && { ! web_running || ! web_signature_matches; }; then
 		stop_web_process
 	fi
 	if ! web_process_running; then
 		(cd "$bench_root" && nohup bench serve --port "$web_port" --noreload > logs/era-web.log 2>&1 & echo $! > "$web_pid")
+		current_web_signature > "$web_signature"
 	fi
 	wait_until_running "Frappe web" web_running
 
