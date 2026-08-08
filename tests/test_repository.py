@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 import json
 import pathlib
+import plistlib
 import re
 import unittest
 
@@ -101,9 +102,20 @@ class RepositoryContractTest(unittest.TestCase):
 			"era_soft/public/images/era-soft-logo.svg",
 			"era_soft/public/css/era_soft.css",
 			"macos/ERA SOFT.command",
+			"macos/ERA SOFT.app/Contents/MacOS/era-soft-launcher",
+			"macos/ERA SOFT.app/Contents/Resources/era-soft-launcher.sh",
+			"macos/ERA SOFT.app/Contents/Resources/era-soft.icns",
+			"scripts/build_macos_app.sh",
+			"scripts/install_macos_app.sh",
 		):
 			with self.subTest(relative_path=relative_path):
 				self.assertTrue((ROOT / relative_path).is_file())
+
+		info_path = ROOT / "macos" / "ERA SOFT.app" / "Contents" / "Info.plist"
+		with info_path.open("rb") as info_file:
+			info = plistlib.load(info_file)
+		self.assertEqual(info["CFBundleDisplayName"], "ERA SOFT")
+		self.assertEqual(info["CFBundleExecutable"], "era-soft-launcher")
 
 	def test_russian_translation_layer_has_unique_sources(self) -> None:
 		translation_path = ROOT / "era_soft" / "translations" / "ru.csv"

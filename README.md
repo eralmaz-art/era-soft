@@ -15,7 +15,7 @@ upgrade-safe visual baseline, and the draft product design system:
 - a valid `era_soft` Frappe application skeleton;
 - explicit ERPNext extension boundaries;
 - product, architecture, roadmap, and decision records;
-- ERA SOFT branding, curated navigation, and a macOS launcher;
+- ERA SOFT branding, curated navigation, and a native macOS desktop launcher;
 - UX-first product rules and review-ready executive and construction concepts;
 - a locked Platform → Application → Module → Feature architecture boundary;
 - a long-term product strategy and decision-based feature admission standard;

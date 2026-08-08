@@ -7,6 +7,35 @@ It introduces no business DocTypes, workflows, reports, or accounting logic.
 
 ## Start and open
 
+The normal macOS entry point is the `ERA SOFT.app` application bundle. Install
+its desktop shortcut once:
+
+```bash
+scripts/install_macos_app.sh
+```
+
+After installation, double-click **ERA SOFT** on the Desktop. The application
+starts only the missing local services and opens the site in a dedicated Chrome
+application window. If Chrome is unavailable, it uses the default browser. The
+launcher then exits quietly. Diagnostics are written to:
+
+```text
+~/Library/Logs/ERA SOFT Launcher.log
+```
+
+The application icon is generated from the versioned ERA SOFT brand mark. The
+Desktop entry is a symbolic link, so reviewed launcher and icon updates take
+effect without reinstalling it.
+
+After changing the native launcher source or its shell entry point, rebuild the
+local application bundle with:
+
+```bash
+scripts/build_macos_app.sh
+```
+
+### Terminal fallback
+
 On macOS, double-click `macos/ERA SOFT.command`. The launcher resolves its real
 location even when it is installed as a Desktop symlink, starts missing local
 services through `scripts/local_stack.sh`, waits for the web server, and opens:
@@ -15,7 +44,7 @@ services through `scripts/local_stack.sh`, waits for the web server, and opens:
 http://era.localhost:8003
 ```
 
-Install the launcher on the current user's Desktop once:
+Install the legacy Terminal-style launcher on the current user's Desktop once:
 
 ```bash
 scripts/install_macos_launcher.sh
