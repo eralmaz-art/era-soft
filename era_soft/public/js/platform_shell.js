@@ -56,6 +56,13 @@
 							<span aria-hidden="true">·</span>
 							<time data-era-time>08:30</time>
 						</div>
+						<div class="era-command-center__portfolio" aria-label="Масштаб ERA GROUP">
+							<strong>ERA GROUP</strong>
+							<span><b>3</b><small>компании</small></span>
+							<span><b>2</b><small>проекта</small></span>
+							<span><b>1</b><small>платформа</small></span>
+							<span><b>8</b><small>приложений</small></span>
+						</div>
 					</div>
 					<details class="era-company-context">
 						<summary>
@@ -116,8 +123,9 @@
 				<span class="era-platform-app__description">Первое рабочее приложение платформы</span>
 				<span class="era-construction-metrics">
 					<span><small>Версия</small><strong>0.5</strong></span>
-					<span><small>Последнее обновление</small><strong>Сегодня</strong></span>
-					<span><small>Модулей готово</small><strong>2 из 7</strong></span>
+					<span><small>Сегодня</small><strong>2 новых изменения</strong></span>
+					<span><small>Последнее обновление</small><strong>15:40</strong></span>
+					<span><small>Модулей</small><strong>2 из 7</strong></span>
 				</span>
 			</span>`;
 	}
@@ -202,9 +210,9 @@
 		enhance_branded_card(concrete, "concrete", {
 			logo_alt: "Логотип ERA Concrete",
 			name: "ERA Concrete",
-			status: "Следующий продукт",
+			status: "Roadmap",
 			description: "Производство бетона и операционный контроль",
-			release: "Старт после Construction MVP",
+			release: "После Construction MVP",
 		});
 
 		const education = editor.querySelector(
@@ -213,9 +221,9 @@
 		enhance_branded_card(education, "education", {
 			logo_alt: "Логотип SRIS Bishkek",
 			name: "SRIS Bishkek",
-			status: "Запланировано",
+			status: "Roadmap",
 			description: "Образовательное приложение платформы",
-			release: "После ERA Concrete",
+			release: "После ERA Concrete · Release v2",
 		});
 
 		const original_dashboard = editor.querySelector(

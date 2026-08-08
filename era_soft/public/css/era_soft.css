@@ -209,6 +209,10 @@ body[data-route="Workspaces/ERA SOFT"] .ce-header .h4 {
 	color: var(--era-graphite-900);
 }
 
+html[data-theme="dark"] body[data-route="Workspaces/ERA SOFT"] .ce-header .h4 {
+	color: var(--era-graphite-900) !important;
+}
+
 body[data-route="Workspaces/ERA SOFT"] .ce-header .h2 b,
 body[data-route="Workspaces/ERA SOFT"] .ce-header .h4 b {
 	font-weight: 500 !important;
@@ -256,6 +260,43 @@ body[data-route="Workspaces/ERA SOFT"] .era-command-center__date {
 	gap: 7px;
 	color: #bac4c8;
 	font-size: 14px;
+}
+
+body[data-route="Workspaces/ERA SOFT"] .era-command-center__portfolio {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+	margin-top: 24px;
+}
+
+body[data-route="Workspaces/ERA SOFT"] .era-command-center__portfolio > strong {
+	margin-right: 4px;
+	color: #dfe6e3;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+}
+
+body[data-route="Workspaces/ERA SOFT"] .era-command-center__portfolio > span {
+	display: inline-flex;
+	align-items: baseline;
+	gap: 5px;
+	padding: 7px 10px;
+	border: 1px solid #40505a;
+	border-radius: 9px;
+	background: rgb(255 255 255 / 3%);
+}
+
+body[data-route="Workspaces/ERA SOFT"] .era-command-center__portfolio b {
+	color: #83bea6;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+body[data-route="Workspaces/ERA SOFT"] .era-command-center__portfolio small {
+	color: #bac4c8;
+	font-size: 11px;
 }
 
 body[data-route="Workspaces/ERA SOFT"] .era-company-context {
@@ -446,6 +487,11 @@ body[data-route="Workspaces/ERA SOFT"] .era-platform-grid--services {
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+body[data-route="Workspaces/ERA SOFT"] .era-platform-grid--apps {
+	gap: 16px;
+	margin-bottom: 22px;
+}
+
 body[data-route="Workspaces/ERA SOFT"] .era-platform-grid--management {
 	grid-template-columns: minmax(0, 1fr);
 }
@@ -495,7 +541,7 @@ body[data-route="Workspaces/ERA SOFT"] .era-platform-app__logo {
 	width: 92px;
 	height: 92px;
 	place-items: center;
-	padding: 10px;
+	padding: 7px;
 	border: 1px solid #e7eae8;
 	border-radius: 14px;
 	background: #fff;
@@ -510,17 +556,17 @@ body[data-route="Workspaces/ERA SOFT"] .era-platform-app__logo img {
 }
 
 body[data-route="Workspaces/ERA SOFT"] .era-platform-app__logo[data-era-brand="construction"] img {
-	max-width: 84px;
+	max-width: 78px;
 }
 
 body[data-route="Workspaces/ERA SOFT"] .era-platform-app__logo[data-era-brand="concrete"] img {
-	max-width: 62px;
-	max-height: 74px;
+	max-width: 66px;
+	max-height: 78px;
 }
 
 body[data-route="Workspaces/ERA SOFT"] .era-platform-app__logo[data-era-brand="education"] img {
-	max-width: 62px;
-	max-height: 76px;
+	max-width: 66px;
+	max-height: 80px;
 }
 
 body[data-route="Workspaces/ERA SOFT"] .era-platform-app__body {
@@ -550,7 +596,7 @@ body[data-route="Workspaces/ERA SOFT"] .era-platform-app__heading .era-platform-
 body[data-route="Workspaces/ERA SOFT"] .era-construction-metrics {
 	display: grid;
 	width: 100%;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
+	grid-template-columns: repeat(4, minmax(0, 1fr));
 	gap: 10px;
 	margin-top: 20px;
 }
@@ -790,6 +836,15 @@ body[data-route="Workspaces/ERA SOFT"] .era-platform-current small + small {
 		margin-left: 0;
 	}
 
+	body[data-route="Workspaces/ERA SOFT"] .era-command-center__portfolio > strong {
+		width: 100%;
+	}
+
+	body[data-route="Workspaces/ERA SOFT"] .era-command-center__portfolio > span {
+		flex: 1 1 calc(50% - 5px);
+		justify-content: center;
+	}
+
 	body[data-route="Workspaces/ERA SOFT"] .era-command-center__actions {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -832,7 +887,7 @@ body[data-route="Workspaces/ERA SOFT"] .era-platform-current small + small {
 	body[data-route="Workspaces/ERA SOFT"] .era-platform-app__logo {
 		width: 72px;
 		height: 72px;
-		padding: 8px;
+		padding: 6px;
 		border-radius: 12px;
 	}
 

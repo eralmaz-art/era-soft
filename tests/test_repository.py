@@ -65,7 +65,7 @@ class RepositoryContractTest(unittest.TestCase):
 			r'app_version = "([^"]+)"',
 			(ROOT / "era_soft" / "hooks.py").read_text(encoding="utf-8"),
 		).group(1)
-		self.assertEqual(package_version, "0.5.3")
+		self.assertEqual(package_version, "0.5.4")
 		self.assertEqual(hooks_version, package_version)
 
 	def test_platform_and_construction_navigation_are_separate(self) -> None:
