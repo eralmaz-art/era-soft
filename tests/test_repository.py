@@ -65,7 +65,7 @@ class RepositoryContractTest(unittest.TestCase):
 			r'app_version = "([^"]+)"',
 			(ROOT / "era_soft" / "hooks.py").read_text(encoding="utf-8"),
 		).group(1)
-		self.assertEqual(package_version, "0.5.2")
+		self.assertEqual(package_version, "0.5.3")
 		self.assertEqual(hooks_version, package_version)
 
 	def test_platform_and_construction_navigation_are_separate(self) -> None:
@@ -78,7 +78,7 @@ class RepositoryContractTest(unittest.TestCase):
 				"Applications",
 				"ERA Construction",
 				"ERA Concrete",
-				"ERA Education",
+				"SRIS Bishkek",
 				"Platform Services",
 				"ERA Finance",
 				"ERA HR",
@@ -123,7 +123,11 @@ class RepositoryContractTest(unittest.TestCase):
 		for relative_path in (
 			"era_soft/public/images/era-soft-mark.svg",
 			"era_soft/public/images/era-soft-logo.svg",
+			"era_soft/public/branding/construction.png",
+			"era_soft/public/branding/concrete.png",
+			"era_soft/public/branding/education.png",
 			"era_soft/public/css/era_soft.css",
+			"docs/branding/application-branding.md",
 			"macos/ERA SOFT.command",
 			"macos/ERA SOFT.app/Contents/MacOS/era-soft-launcher",
 			"macos/ERA SOFT.app/Contents/Resources/era-soft-launcher.sh",

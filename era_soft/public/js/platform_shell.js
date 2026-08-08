@@ -98,21 +98,57 @@
 			</section>`;
 	}
 
+	function official_logo_markup(brand, alt) {
+		return `
+			<span class="era-platform-app__logo" data-era-brand="${brand}">
+				<img src="/assets/era_soft/branding/${brand}.png" alt="${alt}" loading="eager">
+			</span>`;
+	}
+
 	function construction_card_markup() {
 		return `
-			<span class="era-platform-app__icon" aria-hidden="true">🏗</span>
+			${official_logo_markup("construction", "Логотип ERA Construction")}
 			<span class="era-platform-app__body">
 				<span class="era-platform-app__heading">
 					<span class="era-platform-app__name">ERA Construction</span>
 					<span class="era-platform-status">Активно</span>
 				</span>
-				<span class="era-platform-app__description">Основное рабочее приложение ERA SOFT</span>
+				<span class="era-platform-app__description">Первое рабочее приложение платформы</span>
 				<span class="era-construction-metrics">
 					<span><small>Версия</small><strong>0.5</strong></span>
 					<span><small>Последнее обновление</small><strong>Сегодня</strong></span>
 					<span><small>Модулей готово</small><strong>2 из 7</strong></span>
 				</span>
 			</span>`;
+	}
+
+	function enhance_branded_card(card, brand, content) {
+		if (!card) return;
+
+		card.classList.add("era-platform-app--branded");
+		card.dataset.eraBrand = brand;
+
+		const icon = card.querySelector(".era-platform-app__icon");
+		if (icon) icon.outerHTML = official_logo_markup(brand, content.logo_alt);
+
+		const name = card.querySelector(".era-platform-app__name");
+		const status = card.querySelector(".era-platform-status");
+		const description = card.querySelector(".era-platform-app__description");
+		if (name) name.textContent = content.name;
+		if (status) status.textContent = content.status;
+		if (description) description.textContent = content.description;
+
+		const body = card.querySelector(".era-platform-app__body");
+		let release = card.querySelector(".era-platform-app__release");
+		if (!release && body) {
+			body.insertAdjacentHTML(
+				"beforeend",
+				'<span class="era-platform-app__release"><small>Этап запуска</small><strong></strong></span>'
+			);
+			release = card.querySelector(".era-platform-app__release");
+		}
+		const release_value = release?.querySelector("strong");
+		if (release_value) release_value.textContent = content.release;
 	}
 
 	function update_dynamic_content(command_center) {
@@ -154,17 +190,33 @@
 			'.era-platform-grid--apps a[href="/desk/construction"]'
 		);
 		if (construction && !construction.classList.contains("era-platform-app--construction")) {
-			construction.classList.add("era-platform-app--construction");
+			construction.classList.add(
+				"era-platform-app--construction",
+				"era-platform-app--branded"
+			);
+			construction.dataset.eraBrand = "construction";
 			construction.innerHTML = construction_card_markup();
 		}
 
 		const concrete = editor.querySelector('.era-platform-grid--apps a[href="/desk/era-concrete"]');
-		if (concrete) {
-			const status = concrete.querySelector(".era-platform-status");
-			const description = concrete.querySelector(".era-platform-app__description");
-			if (status) status.textContent = "Старт после Construction MVP";
-			if (description) description.textContent = "Следующий продукт платформы";
-		}
+		enhance_branded_card(concrete, "concrete", {
+			logo_alt: "Логотип ERA Concrete",
+			name: "ERA Concrete",
+			status: "Следующий продукт",
+			description: "Производство бетона и операционный контроль",
+			release: "Старт после Construction MVP",
+		});
+
+		const education = editor.querySelector(
+			'.era-platform-grid--apps a[href="/desk/era-education"]'
+		);
+		enhance_branded_card(education, "education", {
+			logo_alt: "Логотип SRIS Bishkek",
+			name: "SRIS Bishkek",
+			status: "Запланировано",
+			description: "Образовательное приложение платформы",
+			release: "После ERA Concrete",
+		});
 
 		const original_dashboard = editor.querySelector(
 			'.era-platform-grid--management a[href="/desk/dashboard"]'
