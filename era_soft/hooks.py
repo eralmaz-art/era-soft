@@ -10,7 +10,7 @@ app_publisher = "ERA Group"
 app_description = "Business operating platform for ERA Group"
 app_email = ""
 app_license = "Proprietary"
-app_version = "0.5.1"
+app_version = "0.5.2"
 
 required_apps = ["erpnext"]
 
@@ -26,7 +26,8 @@ add_to_apps_screen = [
 	}
 ]
 
-app_include_css = ["/assets/era_soft/css/era_soft.css?v=0.5.1-platform-shell"]
+app_include_css = ["/assets/era_soft/css/era_soft.css?v=0.5.2-command-center"]
+app_include_js = ["/assets/era_soft/js/platform_shell.js?v=0.5.2-command-center"]
 
 doctype_js = {
 	"Project": "public/js/project.js",
