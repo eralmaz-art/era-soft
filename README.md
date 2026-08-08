@@ -9,22 +9,20 @@ an upstream dependency and is never vendored or modified in this repository.
 
 ## Current status
 
-This repository contains the approved architecture foundation, the first
-upgrade-safe visual baseline, and the draft product design system:
+This repository contains the approved product foundation, the upgrade-safe
+visual baseline, and the first working Construction capability:
 
 - a valid `era_soft` Frappe application skeleton;
 - explicit ERPNext extension boundaries;
 - product, architecture, roadmap, and decision records;
 - ERA SOFT branding, curated navigation, and a native macOS desktop launcher;
+- a platform-level application portfolio with contextual Construction navigation;
 - UX-first product rules and review-ready executive and construction concepts;
 - a locked Platform → Application → Module → Feature architecture boundary;
 - a long-term product strategy and decision-based feature admission standard;
 - a local environment preflight check;
-- lightweight repository quality checks.
-
-No business DocTypes have been created yet. That is intentional: the first
-implementation must follow both a fit-gap review against ERPNext and an approved
-UX mockup.
+- lightweight repository quality checks;
+- the first Project → Need → Approval → Purchase Request vertical slice.
 
 ## Target platform
 

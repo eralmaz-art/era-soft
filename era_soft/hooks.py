@@ -7,15 +7,15 @@ requires an architecture decision record and regression coverage.
 app_name = "era_soft"
 app_title = "ERA SOFT"
 app_publisher = "ERA Group"
-app_description = "Construction and ready-mix concrete operations for ERA Group"
+app_description = "Business operating platform for ERA Group"
 app_email = ""
 app_license = "Proprietary"
-app_version = "0.5.0"
+app_version = "0.5.1"
 
 required_apps = ["erpnext"]
 
 app_logo_url = "/assets/era_soft/images/era-soft-mark.svg"
-app_home = "/desk/construction"
+app_home = "/desk/era-soft"
 
 add_to_apps_screen = [
 	{
@@ -26,7 +26,7 @@ add_to_apps_screen = [
 	}
 ]
 
-app_include_css = ["/assets/era_soft/css/era_soft.css"]
+app_include_css = ["/assets/era_soft/css/era_soft.css?v=0.5.1"]
 
 doctype_js = {
 	"Project": "public/js/project.js",

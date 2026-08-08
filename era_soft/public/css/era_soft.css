@@ -180,6 +180,104 @@ body[data-route="Workspaces/Construction"] .links-widget-box .link-item svg {
 	color: var(--era-green-700);
 }
 
+body[data-route="Workspaces/ERA SOFT"] .page-container,
+body[data-route="Workspaces/ERA SOFT"] .page-head,
+body[data-route="Workspaces/ERA SOFT"] .layout-main-section {
+	background: var(--era-canvas);
+}
+
+body[data-route="Workspaces/ERA SOFT"] .page-head {
+	border-bottom-color: transparent;
+}
+
+body[data-route="Workspaces/ERA SOFT"] .layout-main {
+	max-width: 1180px !important;
+}
+
+body[data-route="Workspaces/ERA SOFT"] .layout-main-section {
+	padding: 30px 34px 56px;
+}
+
+body[data-route="Workspaces/ERA SOFT"] .ce-header .h2 {
+	color: var(--era-graphite-900);
+	font-size: 34px;
+	font-weight: 500;
+	letter-spacing: -0.035em;
+}
+
+body[data-route="Workspaces/ERA SOFT"] .ce-header .h2 b,
+body[data-route="Workspaces/ERA SOFT"] .ce-header .h4 b {
+	font-weight: 500 !important;
+}
+
+body[data-route="Workspaces/ERA SOFT"] .ce-paragraph.widget {
+	color: var(--era-graphite-500);
+	font-size: 15px;
+}
+
+body[data-route="Workspaces/ERA SOFT"] .era-platform-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 14px;
+	margin-top: 4px;
+}
+
+body[data-route="Workspaces/ERA SOFT"] .era-platform-app {
+	display: flex;
+	min-height: 118px;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: 20px;
+	border: 1px solid var(--era-border);
+	border-radius: 14px;
+	background: var(--era-surface);
+	color: var(--era-graphite-900);
+	text-decoration: none;
+	transition: border-color 160ms ease, transform 160ms ease;
+}
+
+body[data-route="Workspaces/ERA SOFT"] .era-platform-app:hover,
+body[data-route="Workspaces/ERA SOFT"] .era-platform-app:focus-visible {
+	border-color: color-mix(in srgb, var(--era-green-700) 42%, var(--era-border));
+	color: var(--era-graphite-900);
+	text-decoration: none;
+	transform: translateY(-1px);
+}
+
+body[data-route="Workspaces/ERA SOFT"] .era-platform-app--active {
+	border-color: color-mix(in srgb, var(--era-green-700) 34%, var(--era-border));
+}
+
+body[data-route="Workspaces/ERA SOFT"] .era-platform-app__name {
+	font-size: 17px;
+	font-weight: 500;
+	letter-spacing: -0.01em;
+}
+
+body[data-route="Workspaces/ERA SOFT"] .era-platform-status {
+	display: inline-flex;
+	padding: 4px 8px;
+	border-radius: 999px;
+	background: #edf0ef;
+	color: var(--era-graphite-500);
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+body[data-route="Workspaces/ERA SOFT"] .era-platform-app--active .era-platform-status {
+	background: var(--era-green-100);
+	color: var(--era-green-700);
+}
+
+body[data-route="Workspaces/ERA SOFT"] .era-platform-app--soon .era-platform-status {
+	background: #f6ecd9;
+	color: #7b5a20;
+}
+
 @media (max-width: 767px) {
 	body[data-route="Workspaces/Construction"] .layout-main-section {
 		padding: 8px 12px 32px;
@@ -198,6 +296,23 @@ body[data-route="Workspaces/Construction"] .links-widget-box .link-item svg {
 		min-height: auto;
 		padding: 16px;
 	}
+
+	body[data-route="Workspaces/ERA SOFT"] .layout-main-section {
+		padding: 14px 14px 36px;
+	}
+
+	body[data-route="Workspaces/ERA SOFT"] .ce-header .h2 {
+		font-size: 28px;
+	}
+
+	body[data-route="Workspaces/ERA SOFT"] .era-platform-grid {
+		grid-template-columns: 1fr;
+	}
+
+	body[data-route="Workspaces/ERA SOFT"] .era-platform-app {
+		min-height: 96px;
+		padding: 16px;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -206,6 +321,14 @@ body[data-route="Workspaces/Construction"] .links-widget-box .link-item svg {
 	}
 
 	body[data-route="Workspaces/Construction"] .widget.links-widget-box:hover {
+		transform: none;
+	}
+
+	body[data-route="Workspaces/ERA SOFT"] .era-platform-app {
+		transition: none;
+	}
+
+	body[data-route="Workspaces/ERA SOFT"] .era-platform-app:hover {
 		transform: none;
 	}
 }

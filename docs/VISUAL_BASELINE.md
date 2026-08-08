@@ -86,21 +86,23 @@ workspace-local MariaDB process are stopped. No site data is deleted.
 The visual layer uses supported Frappe extension points in `era_soft/hooks.py`:
 
 - `app_title`, `app_logo_url`, `app_home`, and `add_to_apps_screen` identify the
-  application and make Construction its landing workspace;
+  application and make ERA SOFT Platform its landing workspace;
 - `app_include_css` loads a small ERA palette and component polish from the
   custom app's public assets;
 - `after_migrate` applies the ERA name, logo, favicon, splash image, and default
   application through normal singleton settings;
-- six ERA Workspaces and the Construction sidebar provide the curated navigation;
+- ERA Workspaces and separate Platform and Construction sidebars provide the
+  two-level navigation;
 - the existing ERPNext Projects workspace and standard Supplier and Employee
   DocTypes are reused rather than copied.
 
-The curated navigation is Dashboard, Construction, Procurement, Finance,
-Projects, Suppliers, Employees, Reports, and Settings. Other ERPNext modules are
-not deleted. On the root desktop they are grouped behind the standard ERPNext app
-tile instead of being promoted as many top-level icons. They remain available to
-permitted users through that tile and global search while ERA SOFT presents the
-smaller daily navigation. The restore helper returns the ERPNext tile to its
+The landing page is an application portfolio: ERA Construction is active;
+Concrete is marked as coming soon; Education, HR, Documents and AI are planned;
+Finance and the Executive Dashboard expose only their existing foundations.
+Selecting Construction changes the navigation to Overview, Projects, Budgets,
+Procurement, Materials, Contractors, Payments and Reports. Other ERPNext modules
+are not deleted. They remain available to permitted users through the standard
+ERPNext app tile and global search. The restore helper returns that tile to its
 upstream hidden default.
 
 ### Replace the temporary logo

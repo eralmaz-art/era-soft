@@ -42,6 +42,14 @@ web_running() {
 			"http://127.0.0.1:$web_port/api/method/ping" >/dev/null 2>&1
 }
 
+web_process_running() {
+	if command -v lsof >/dev/null 2>&1; then
+		lsof -tiTCP:"$web_port" -sTCP:LISTEN >/dev/null 2>&1
+	else
+		is_running "$web_pid"
+	fi
+}
+
 wait_until_running() {
 	label=$1
 	shift
@@ -55,6 +63,38 @@ wait_until_running() {
 	done
 	echo "$label did not become ready within 30 seconds" >&2
 	return 1
+}
+
+wait_until_stopped() {
+	label=$1
+	shift
+	attempt=0
+	while [ "$attempt" -lt 30 ]; do
+		if ! "$@"; then
+			return 0
+		fi
+		attempt=$((attempt + 1))
+		sleep 1
+	done
+	echo "$label did not stop within 30 seconds" >&2
+	return 1
+}
+
+stop_web_process() {
+	if ! web_process_running; then
+		echo "web server is not running"
+		return 0
+	fi
+
+	if command -v lsof >/dev/null 2>&1; then
+		for process_id in $(lsof -tiTCP:"$web_port" -sTCP:LISTEN); do
+			kill "$process_id"
+		done
+	elif is_running "$web_pid"; then
+		kill "$(sed -n '1p' "$web_pid")"
+	fi
+	wait_until_stopped "web server" web_process_running
+	echo "Stopped web server"
 }
 
 require_file() {
@@ -96,7 +136,10 @@ start_stack() {
 	wait_until_running "Redis cache" redis_running 13003
 	wait_until_running "Redis queue" redis_running 11003
 
-	if ! web_running; then
+	if web_process_running && ! web_running; then
+		stop_web_process
+	fi
+	if ! web_process_running; then
 		(cd "$bench_root" && nohup bench serve --port "$web_port" --noreload > logs/era-web.log 2>&1 & echo $! > "$web_pid")
 	fi
 	wait_until_running "Frappe web" web_running
@@ -116,15 +159,17 @@ stop_process() {
 }
 
 stop_stack() {
-	stop_process "$web_pid" "web server"
+	stop_web_process
 	if redis_running 11003; then
 		redis-cli -p 11003 shutdown
+		wait_until_stopped "Redis queue" redis_running 11003
 		echo "Stopped Redis queue"
 	else
 		echo "Redis queue is not running"
 	fi
 	if redis_running 13003; then
 		redis-cli -p 13003 shutdown
+		wait_until_stopped "Redis cache" redis_running 13003
 		echo "Stopped Redis cache"
 	else
 		echo "Redis cache is not running"
@@ -136,6 +181,7 @@ stop_stack() {
 			--user=root \
 			--password="$db_root_password" \
 			--execute=SHUTDOWN >/dev/null 2>&1
+		wait_until_stopped "MariaDB" mariadb_running
 		echo "Stopped MariaDB"
 	else
 		echo "MariaDB is not running"

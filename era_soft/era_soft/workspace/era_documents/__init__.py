@@ -1,0 +1,1 @@
+"""ERA Documents platform placeholder."""

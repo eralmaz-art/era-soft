@@ -65,24 +65,45 @@ class RepositoryContractTest(unittest.TestCase):
 			r'app_version = "([^"]+)"',
 			(ROOT / "era_soft" / "hooks.py").read_text(encoding="utf-8"),
 		).group(1)
-		self.assertEqual(package_version, "0.5.0")
+		self.assertEqual(package_version, "0.5.1")
 		self.assertEqual(hooks_version, package_version)
 
-	def test_navigation_matches_approved_order(self) -> None:
+	def test_platform_and_construction_navigation_are_separate(self) -> None:
+		platform_sidebar_path = ROOT / "era_soft" / "workspace_sidebar" / "era_soft.json"
+		platform_sidebar = json.loads(platform_sidebar_path.read_text(encoding="utf-8"))
+		self.assertEqual(
+			[item["label"] for item in platform_sidebar["items"]],
+			[
+				"ERA SOFT",
+				"Applications",
+				"ERA Construction",
+				"ERA Concrete",
+				"ERA Education",
+				"ERA Finance",
+				"ERA HR",
+				"ERA Documents",
+				"ERA AI",
+				"Management",
+				"Executive Dashboard",
+				"Administration",
+			],
+		)
+
 		sidebar_path = ROOT / "era_soft" / "workspace_sidebar" / "construction.json"
 		sidebar = json.loads(sidebar_path.read_text(encoding="utf-8"))
 		self.assertEqual(
 			[item["label"] for item in sidebar["items"]],
 			[
-				"Dashboard",
-				"Construction",
-				"Procurement",
-				"Finance",
+				"ERA SOFT",
+				"Construction Application",
+				"Overview",
 				"Projects",
-				"Suppliers",
-				"Employees",
+				"Budgets",
+				"Procurement",
+				"Materials",
+				"Contractors",
+				"Payments",
 				"Reports",
-				"Settings",
 			],
 		)
 
@@ -90,6 +111,7 @@ class RepositoryContractTest(unittest.TestCase):
 		configuration_paths = [
 			ROOT / "era_soft" / "desktop_icon" / "era_soft.json",
 			ROOT / "era_soft" / "workspace_sidebar" / "construction.json",
+			ROOT / "era_soft" / "workspace_sidebar" / "era_soft.json",
 			*sorted((ROOT / "era_soft").glob("**/workspace/**/*.json")),
 		]
 		for path in configuration_paths:
@@ -149,12 +171,16 @@ class RepositoryContractTest(unittest.TestCase):
 				if card_name := block.get("data", {}).get("card_name"):
 					visible_sources.add(card_name)
 				if text := block.get("data", {}).get("text"):
-					visible_sources.add(re.sub(r"<[^>]+>", "", text))
+					visible_sources.update(
+						part.strip() for part in re.split(r"<[^>]+>", text) if part.strip()
+					)
 
-		sidebar = json.loads(
-			(ROOT / "era_soft" / "workspace_sidebar" / "construction.json").read_text(encoding="utf-8")
-		)
-		visible_sources.update(item["label"] for item in sidebar["items"])
+		for sidebar_path in sorted((ROOT / "era_soft" / "workspace_sidebar").glob("*.json")):
+			sidebar = json.loads(sidebar_path.read_text(encoding="utf-8"))
+			visible_sources.update(item["label"] for item in sidebar["items"])
+		visible_sources = {
+			source for source in visible_sources if not re.search(r"[А-Яа-яЁё]", source)
+		}
 		visible_sources.discard("ERA SOFT")
 
 		self.assertEqual(visible_sources - translated_sources, set())

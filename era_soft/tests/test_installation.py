@@ -44,7 +44,20 @@ class TestInstallation(IntegrationTestCase):
 					pluck="name",
 				)
 			),
-			{"Dashboard", "Construction", "Procurement", "Finance", "Reports", "Settings"},
+			{
+				"ERA SOFT",
+				"ERA Concrete",
+				"ERA Education",
+				"ERA HR",
+				"ERA Documents",
+				"ERA AI",
+				"Dashboard",
+				"Construction",
+				"Procurement",
+				"Finance",
+				"Reports",
+				"Settings",
+			},
 		)
 
 	def test_russian_localization_baseline_is_installed(self) -> None:

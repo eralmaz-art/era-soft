@@ -1,0 +1,23 @@
+{
+ "app": "era_soft",
+ "doctype": "Workspace Sidebar",
+ "header_icon": "home",
+ "items": [
+  {"child": 0, "collapsible": 1, "icon": "home", "indent": 0, "keep_closed": 0, "label": "ERA SOFT", "link_to": "ERA SOFT", "link_type": "Workspace", "show_arrow": 0, "type": "Link"},
+  {"child": 0, "collapsible": 1, "icon": "grid", "indent": 1, "keep_closed": 0, "label": "Applications", "link_type": "DocType", "show_arrow": 0, "type": "Section Break"},
+  {"child": 1, "collapsible": 1, "icon": "building", "indent": 0, "keep_closed": 0, "label": "ERA Construction", "link_to": "Construction", "link_type": "Workspace", "show_arrow": 0, "type": "Link"},
+  {"child": 1, "collapsible": 1, "icon": "layers", "indent": 0, "keep_closed": 0, "label": "ERA Concrete", "link_to": "ERA Concrete", "link_type": "Workspace", "show_arrow": 0, "type": "Link"},
+  {"child": 1, "collapsible": 1, "icon": "education", "indent": 0, "keep_closed": 0, "label": "ERA Education", "link_to": "ERA Education", "link_type": "Workspace", "show_arrow": 0, "type": "Link"},
+  {"child": 1, "collapsible": 1, "icon": "accounting", "indent": 0, "keep_closed": 0, "label": "ERA Finance", "link_to": "Finance", "link_type": "Workspace", "show_arrow": 0, "type": "Link"},
+  {"child": 1, "collapsible": 1, "icon": "users", "indent": 0, "keep_closed": 0, "label": "ERA HR", "link_to": "ERA HR", "link_type": "Workspace", "show_arrow": 0, "type": "Link"},
+  {"child": 1, "collapsible": 1, "icon": "file", "indent": 0, "keep_closed": 0, "label": "ERA Documents", "link_to": "ERA Documents", "link_type": "Workspace", "show_arrow": 0, "type": "Link"},
+  {"child": 1, "collapsible": 1, "icon": "sparkles", "indent": 0, "keep_closed": 0, "label": "ERA AI", "link_to": "ERA AI", "link_type": "Workspace", "show_arrow": 0, "type": "Link"},
+  {"child": 0, "collapsible": 1, "icon": "chart", "indent": 1, "keep_closed": 0, "label": "Management", "link_type": "DocType", "show_arrow": 0, "type": "Section Break"},
+  {"child": 1, "collapsible": 1, "icon": "dashboard", "indent": 0, "keep_closed": 0, "label": "Executive Dashboard", "link_to": "Dashboard", "link_type": "Workspace", "show_arrow": 0, "type": "Link"},
+  {"child": 1, "collapsible": 1, "icon": "settings", "indent": 0, "keep_closed": 0, "label": "Administration", "link_to": "Settings", "link_type": "Workspace", "show_arrow": 0, "type": "Link"}
+ ],
+ "module": "ERA Soft",
+ "name": "ERA SOFT",
+ "standard": 1,
+ "title": "ERA SOFT"
+}
