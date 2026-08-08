@@ -77,4 +77,12 @@ system patterns it uses. See the [design-system charter](docs/design-system/era-
 - [Visual baseline operations](docs/VISUAL_BASELINE.md)
 - [Russian terminology standard](docs/localization/russian-terminology.md)
 - [ERA SOFT design system](docs/design-system/era-soft/README.md)
+- [Platform Shell v0.5.1 release notes](docs/releases/v0.5.1-platform-shell.md)
+- [Platform Shell release audit](docs/releases/v0.5.1-platform-shell-audit.md)
 - [Contributing](CONTRIBUTING.md)
+
+## License
+
+ERA SOFT source code is proprietary and confidential to ERA Group. Frappe,
+ERPNext, and other third-party dependencies retain their own licenses. See
+[LICENSE](LICENSE).

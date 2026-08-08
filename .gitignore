@@ -1,17 +1,30 @@
 *.egg-info/
+*.db
+*.key
+*.log
+*.p12
+*.pem
+*.pid
 *.py[cod]
+*.sql
+*.sql.gz
 *.sqlite
 .DS_Store
 .coverage
 .env
+.env.*
+!.env.example
 .idea/
 .pytest_cache/
 .ruff_cache/
 .venv/
 .vscode/
 __pycache__/
+backups/
 dist/
+logs/
 node_modules/
+runtime/
 
 # Frappe bench runtime belongs outside this application repository.
 frappe-bench/

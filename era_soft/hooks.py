@@ -26,7 +26,7 @@ add_to_apps_screen = [
 	}
 ]
 
-app_include_css = ["/assets/era_soft/css/era_soft.css?v=0.5.1"]
+app_include_css = ["/assets/era_soft/css/era_soft.css?v=0.5.1-platform-shell"]
 
 doctype_js = {
 	"Project": "public/js/project.js",

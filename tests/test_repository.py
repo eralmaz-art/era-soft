@@ -79,6 +79,7 @@ class RepositoryContractTest(unittest.TestCase):
 				"ERA Construction",
 				"ERA Concrete",
 				"ERA Education",
+				"Platform Services",
 				"ERA Finance",
 				"ERA HR",
 				"ERA Documents",
@@ -179,7 +180,9 @@ class RepositoryContractTest(unittest.TestCase):
 			sidebar = json.loads(sidebar_path.read_text(encoding="utf-8"))
 			visible_sources.update(item["label"] for item in sidebar["items"])
 		visible_sources = {
-			source for source in visible_sources if not re.search(r"[А-Яа-яЁё]", source)
+			source
+			for source in visible_sources
+			if re.search(r"[A-Za-z]", source) and not re.search(r"[А-Яа-яЁё]", source)
 		}
 		visible_sources.discard("ERA SOFT")
 
